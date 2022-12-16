@@ -1,0 +1,24 @@
+visual studio code 기본 단축키
+ctrl+shift+k 행 삭제
+ctrl+enter 아래에 행 삽입
+ctrl+shift+enter 위에 행 삽입
+alt+down(방향) 행을 아래로 이동
+alt+up(방향) 행을 위로 이동
+shift+alt+down 위에 행 복사 추가
+shift+alt+up 아래에 행 복사 추가
+ctrl+d 커서 위치의 문장 찾기
+ctrl+u 마지막 커서 작업 실행 취소
+alt+click 커서위치 지정
+ctrl+f2 현재 단어의 모든 항목 선택
+ctrl+alt+down 커서를 아래에 추가
+ctrl+alt+up 커서를 위에 추가
+ctrl+shift+[ 영역 접기
+ctrl+shift+] 영역 펼치기
+ctrl+/ 주석 토글
+shift+alt+a 커서 위치에 주석 토글
+ctrl+\ 편집기 나누기
+ctrl+1 첫번째 편집기 그룹에 초점 맞추기
+ctrl+2 두번째 편집기 그룹에 초점 맞추기
+ctrl+3 세번째 편집기 그룹에 초점 맞추기
+ctrl+= 화면 확대
+ctrl+- 화면 축소
