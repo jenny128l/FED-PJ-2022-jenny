@@ -91,27 +91,22 @@
              */
 
             /* 웹폰트 설정 */
-
-           @font-face {
-            font-family: single;
-            src: url(./fonts/singleDay-Regular.woff)
-            format("woff");
-           }
-           @font-face { 
-            font-family: rubik;
-            src: url(./fonts/rubik80sFade-Regular.woff);
-           }
-           
-           
-           
-
-            
+            @font-face {/* Single Day체 */
+                font-family: single;
+                src: url(./fonts/SingleDay-Regular.woff) format("woff");
+            }
+            @font-face {/* Rubik체 */
+                font-family: rubik;
+                src: url(./fonts/Rubik80sFade-Regular.woff) format("woff");
+            }
+                     
             
             
             /* 적용하기 */
             .wf1{/* Single Day체 */
-                font-family: serif;
-                
+                font-family: single;
+                font-weight: normal;/* fwn */
+                color: hotpink;
             }
             .wf2{/* Cute Font */
                 
@@ -119,10 +114,10 @@
             .wf3{/* Gugi */
                 
             }
-            .wf4{/* rubik */
+            .wf4{/* Rubik체 */
                 font-family: rubik;
                 font-weight: normal;
-                color:darkblue;
+                color: darkblue;
                
             }
             .wf5{/* Rubik Moonrocks */
