@@ -92,21 +92,15 @@
 
             /* 웹폰트 설정 */
 
-            /* Black Han Sans체 */
-           
-           
-            /* Cute Font */
-           
-                       
-            /* Gugi */
-           
-
-            /* BhuTuka */
-           
-            /* Rubik Moonrocks */
-           
-            
-            /* Press Start 2P */
+           @font-face {
+            font-family: single;
+            src: url(./fonts/singleDay-Regular.woff)
+            format("woff");
+           }
+           @font-face { 
+            font-family: rubik;
+            src: url(./fonts/rubik80sFade-Regular.woff);
+           }
            
            
            
@@ -115,7 +109,8 @@
             
             
             /* 적용하기 */
-            .wf1{/* Black Han Sans체 */
+            .wf1{/* Single Day체 */
+                font-family: serif;
                 
             }
             .wf2{/* Cute Font */
@@ -124,7 +119,10 @@
             .wf3{/* Gugi */
                 
             }
-            .wf4{/* BhuTuka */
+            .wf4{/* rubik */
+                font-family: rubik;
+                font-weight: normal;
+                color:darkblue;
                
             }
             .wf5{/* Rubik Moonrocks */
