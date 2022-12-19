@@ -1,10 +1,9 @@
 @charset "utf-8";
-/* 외부css 상단엔 @charset 필수! */
-/* info PJ 공통 css - comman.css */
-
+/* 외부CSS 상단엔 @charset 필수!  */
+/* Info PJ 공통 CSS - common.css */
 
 /* 웹폰트 CDN */
-@import url('https://fonts.googleapis.com/css2?family=Black+And+White+Picture&family=Jua&family=Nanum+Gothic&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Black+And+White+Picture&family=Jua&family=Nanum+Gothic&display=swap");
 
 /* 
     1. 타이틀용
@@ -87,11 +86,11 @@ body {
     한꺼번에 최상위 요소인 html,body를
     마진,패딩 초기화값 0으로 셋팅한다! */
 }
-body{
-        /* 하단패딩 pd */
+
+body {
+    /* 하단패딩 pb */
     padding-bottom: 50px;
 }
-
 
 /* 박스공통 클래스 */
 .bx {
@@ -150,30 +149,30 @@ body{
 /* 1.상단영역 */
 .top {
     /* 배경색 : bgc
-    background-color */
+                background-color */
     background-color: #e6fff2;
     /* 글자중앙정렬 tac */
     text-align: center;
 }
 /* 타이틀 */
-.top>h1{
+.top > h1 {
     /* 1.글자 스타일 fs : 
-    font-style
-    italic : 이탤릭
-    normal : 이탤릭해제(기본값) */
+        font-style
+        italic : 이탤릭
+        normal : 이탤릭해제(기본값) */
     /* font-style: italic; */
     /* font-style: normal; */
 
     /* 2. 글자두께 fw : 
-    font-weight 
-    normal : 두께없음
-    bold : 두껍게*/
+                font-weight 
+                normal : 두께없음
+                bold : 두껍게*/
     font-weight: normal;
     /* font-weight: bold; */
 
     /* 3. 글자크기 : fz 
-    font-size 
-    - 글자단위: pt,px,em,rem,vw,vh*/
+                font-size 
+                - 글자단위: pt,px,em,rem,vw,vh*/
     font-size: 50px;
 
     /* 4. 글자줄간격 : 
@@ -186,51 +185,50 @@ body{
     /* 5. 글자체 : ff
     font-family
     - 콤마로 여러개를 쓰면 대체체를 설정함 */
-    font-family: 'Black And White Picture', sans-serif;
+    font-family: "Black And White Picture", sans-serif;
     /* font-family: "긍서","글림","맑은고딕","돋움"; */
 
     /* 6. 글자색 : c 
-    color : 해시코드/RGB/HSL/웹색상명 */
+                color : 해시코드/RGB/HSL/웹색상명 */
     color: darkgreen;
-
 }
 
 /* GNB 메뉴 a */
-#gnb a{
+#gnb a {
     /* 글자체 */
-    font-family: 'Jua', sans-serif;
+    font-family: "Jua", sans-serif;
     /* a요소는 기본적으로 밑줄과 글자색이 셋팅됨!
-    반드시 a에서 변경해야만 적용된다!(부모에서는 안됨!) */
+                반드시 a에서 변경해야만 적용된다!(부모에서는 안됨!) */
     /* 글자크기 fz */
     font-size: 20px;
     /* 글자색 */
     color: darkslateblue;
     /* 밑줄없앰 - text-decoration:none */
-    text-decoration: none;/* tdn */
+    text-decoration: none; /* tdn */
 }
 /* a요소 오버시 */
 /* :hover 가상클래스
--> 마우스오버된 상태에 대한 디자인 셋팅 */
+            -> 마우스오버된 상태에 대한 디자인 셋팅 */
 /* a+a:hover 앞에 a형제가 있는 a에 오버시 */
-#gnb a+a:hover{
+#gnb a + a:hover {
     /* 글자색 */
     color: lightseagreen;
     /* 글자 데코레이션 : text-decoration
-    underline(밑줄)/overline(윗줄)
-    line-through(중간줄)/none(없음) */
+                underline(밑줄)/overline(윗줄)
+                line-through(중간줄)/none(없음) */
     text-decoration: overline;
 }
 /* 로고 이미지 */
-#gnb img{
-    /* 인라인요소간 세로정렬(진행방향):vertical-align 
-    값: top,bottom,middle,수치 ; */
-    vertical-align: -5px;
+#gnb img {
+    /* 인라인요소간 세로정렬(진행방향) : va
+                vertical-align
+                - 값:top,bottom,middle,수치 */
+    vertical-align: -3px;
 }
-
 
 /* 2.메인영역 */
 /* 메인영역 이미지
-->메인의 .cont 직계자식 img만 적용되게함 */
+-> 메인의 .cont 직계자식 img만 적용되게함! */
 .cont>img {
     width: 100%;
     /* 한쪽만 크기를 주면
@@ -245,9 +243,9 @@ body{
     text-align: center;
 }
 /* 하단주소 */
-.info address{
+.info address {
     /* 글자체 */
-    font-family: 'Jua', sans-serif;
+    font-family: "Jua", sans-serif;
     /* address는 기본 이탤릭 이므로 해제하기 */
     font-style: normal;
     /* 글자색 */
