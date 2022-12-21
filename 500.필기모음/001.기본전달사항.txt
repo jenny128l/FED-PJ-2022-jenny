@@ -5,6 +5,8 @@
 
 2. 평가: 3회차의 프로젝트 산출물
 
+2222222
+
 3. 공식교과서: w3c 스쿨
 https://www.w3schools.com/
 
@@ -19,7 +21,7 @@ https://github.com/tombap8/FED-PJ-2022-tom
 7. 사이트 벤치마킹 포털
 
 (1) 디비컷
-https://www.dbcut.com/
+https://www.dbcut.com/bbs/index.php
 
 (2) 굿디자인웹
 https://www.gdweb.co.kr/main/
