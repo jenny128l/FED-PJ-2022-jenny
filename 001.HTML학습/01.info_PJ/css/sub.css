@@ -429,7 +429,7 @@
     color: green;
 }
 .secnews dt:nth-of-type(2){
-    color: blueviolet;
+    color: red;
 }
 .secnews dt:last-of-type{
     color: blue;
