@@ -2,11 +2,12 @@
 /* 어벤저스 CSS - avengers.css */
 
 /* 웹폰트 */
-@import url('https://fonts.googleapis.com/css2?family=Monoton&family=Single+Day&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dongle&family=Gugi&family=Holtwood+One+SC&family=Single+Day&family=Stylish&display=swap');
 
 /* 
     font-family: 'Monoton', cursive;
     font-family: 'Single Day', cursive;
+    font-family: 'Holtwood One SC', serif;
 */
 
 html{
@@ -55,9 +56,10 @@ html,body{
     width: 100%;
     z-index: 9999;/* 가장위 */
 
-    font-family: 'Monoton', cursive;
-    color: #fff;
-    font-size: 70px;
+    font-family: 'Holtwood One SC', serif;
+    color: gold;
+    font-size: 100px;
+    text-shadow: 2px 5px 2px #000;
     /* 글자두께 보통 */
     font-weight: normal;
     text-align: center;
@@ -208,8 +210,8 @@ body:hover .cbx:nth-child(5){
 
     /* 글자셋팅 */
     font-family: 'Single Day', cursive;
-    color: #fff;
-    text-shadow: 1px 1px 1px #000;
+    color: gold;
+    text-shadow: 1px 2px 2px #000;
 
     /* 처음에 투명하게 */
     opacity: 0;
@@ -250,11 +252,14 @@ padding과 border 때문에 숨겨지지 않음!
 }
 /* 왼쪽 진영 제목 오른쪽정렬 */
 .ltxt h2{
-    text-align: right;
+    text-align: center;
 }
 /* 오른쪽 진영 글자박스 클래스 */
 .rtxt {
     right: -230%;
+}
+.rtxt h2{
+    text-align: center;
 }
 
 
@@ -263,7 +268,7 @@ padding과 border 때문에 숨겨지지 않음!
 /* 서브타이틀 */
 .subtit{
     position: sticky;
-    top: 100px;
+    top: 130px;
     padding: 50px 0;
     text-align: center;
     color: #fff;
@@ -301,10 +306,10 @@ padding과 border 때문에 숨겨지지 않음!
 }
 /* 가상클래스로 화살표모양 넣기 */
 #pg1 .gobtn::after{
-    content: '👇';
+    content: '🎬';
 }
 #pg2 .gobtn::after{
-    content: '👆';
+    content: '🎥';
 }
 /* 개별위치 */
 #pg1 .gobtn{
@@ -315,7 +320,7 @@ padding과 border 때문에 숨겨지지 않음!
 }
 /* 오버시 a변경 */
 .gobtn:hover{
-    color: hotpink;
-    text-decoration: overline;
-    text-decoration-style: wavy ;
+    color: gold;
+    text-decoration: underline;
+    text-decoration-style: wavy;
 }
