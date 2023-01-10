@@ -36,18 +36,22 @@ body * {
 /* 2-1.로봇박스 */
 .robx{
     /* 패딩 위, 아래 */
-    padding: 200px 0 400px;
+    padding: 200px 0 600px;
 }
 
 /* 로봇머리 */
 .head{
     position: relative;
     /* 부모자격 - 하위div */
+    z-index: 1;
+    /* 바디보다 위 */
     width:250px;
     height: 150px;
     /* 마.영.오! */
     margin: 0 auto;
-    /* border-radius: 0 0 50% 50%; */
+    /* 턱깍기 */
+    /* clip-path: polygon(0 0,0 50%,30% 100%,60% 100%,100% 50%,100% 0); */
+    /* border-radius: 30px 30px 50% 50%; */
 }
 /* 로봇버리 직계하위 div는 모두 앱솔루트 */
 .head > div{
@@ -210,6 +214,7 @@ body * {
     height: 400px;
     margin: 0 auto;
     margin-top: 130px;
+    
 }
 /* 몸통 하위 직계 div 모두 앱솔루트! */
 .body>div{
@@ -254,19 +259,254 @@ body * {
     top: -40px;
     left: 65px;
     width: 70px;
-    height: 70px;
+    height: 50px;
     border-radius: 0 0 20px 20px;
-    z-index: -2;
+    /* 하단보더 */
+    border-bottom: 20px ridge goldenrod;
+}
+
+/* 팔공동 */
+.arm{
+    top: 20px;
+    width: 65px;
+    height: 200px;
+    z-index: -1;
+    border-radius: 30px;
+    /* 회전축변경 : 가로중앙 세로15% 지점*/
+    transform-origin: center 15%;
+}
+
+/* 팔공통 가상요소 연결부분 만들기 */
+.arm::before,
+.arm::after{
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: -35px;
+    left: -4px;
+    z-index: 1;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    border: 4px solid #333;
+    background-color: #ccc;
+    /* 보더, 패딩 포함 크기 유지 */
+    box-sizing: border-box;
+}
+/*팔연결부분 내부박스 */
+.arm::after{
+    transform:scale(.8);
+    /* 선형 그라데이션 */
+    background-image: linear-gradient(-45deg,#222 10%,#ccc 60%,#eee);
+}
+
+/* 팔하단 */
+.arm span{
+    position: absolute;
+    top: 100%;
+    left: 5px;
+    /* 부모는? .arm */
+    display: block;
+    width: 55px;
+    height: 190px;
+    border-radius: 25px;
+    /* 회전축변경 : 세로방향 top*/
+    transform-origin: top;
+}
+/* 팔하단 가상요소로 손박스 만들기 */
+.arm span::after{
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: -135px;
+    width: 90px;
+    height: 135px;
+    /* 회전축변경 : 세로방향 top */
+    transform-origin: top;
+
+    outline: 2px dashed lime;
+}
+/* 왼쪽손 배경이미지 */
+.a1 span::after{
+    left: -8px;
+    transform: rotate(10deg);
+    background: url(../images/hand_left.png) no-repeat bottom/100%;
+}
+/* 오른쪽손 배경이미지 */
+.a2 span::after{
+    right: -8px;
+    transform: rotate(-10deg);
+    background: url(../images/hand_right.png) no-repeat bottom/100%;
+}
+/* 팔하단 가상요소로 칼 만들기 */
+.a2 span::before{
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: -330px;
+    left: -500px;
+    width: 706px;
+    height: 114px;
+    outline: 2px dashed lime;
+    transform-origin: top;
+    transform: rotate(150deg);
+    background: url(../images/s_gum.png) no-repeat 0/100% 100%;
 }
 /* 왼팔 */
+.a1{
+    left: -100px;
+    transform: rotate(10deg);
+}
+/* 왼팔하단 */
+.a1 span{
+    transform: rotate(-10deg);
+}
 /* 오른팔 */
+.a2{
+    right: -100px;
+    transform: rotate(-10deg);
+}
+/* 오른팔하단 */
+.a2 span{
+    transform: rotate(10deg);
+}
+/* 다리공통 */
+.leg{
+    top: 90%;
+    /* 부모박스 높이만큼 아래로 밀어냄 */
+    width: 85px;
+    height: 310px;
+    z-index: -1;
+    border-radius: 30px;
+   
+}
+/* 다리공통 가상요소로 연결부분 만들기 */
+.leg::before,
+.leg::after{
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: -40px;
+    left:-3px;
+    z-index: 1;
+    width: 85px;
+    height: 85px;
+    background-color: #ccc;
+    border-radius: 20px;
+    border: 4px solid #333;
+    /* 트랜스폼 : 먼저X축 축소하고 회전
+    -> 무엇을 먼저했느냐에 따라 결과 달라짐! */
+    transform: scaleX(.8) rotate(45deg);    
+}
+/* 다리연결부분 내부박스 */
+.leg::after{
+    transform: scale(.65,.8) rotate(45deg);
+    /* 선형 그라데이션 */
+    background-image: linear-gradient(-90deg,#222 10%,#ccc 60%,#eee);
+}
+/* 다리하단 공통 */
+.leg span{
+    position: absolute;
+    top: 100%;
+    left: 8px;
+    /* 부모는? .arm */
+    display: block;
+    width: 70px;
+    height: 270px;
+    border-radius: 25px;
+}
+/* 다리하단 가상요소로 발만들기 */
+.leg span::after{
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: -50px;
+    left: -14px;
+    width: 90px;
+    height: 60px;
+    background-color: #ccc;
+    border-radius: 40px 40px 0 0;
+    border: 4px solid #222;
+    border-bottom: 20px solid #222;
+
+    /* 선형 그라데이션 */
+    background-image: linear-gradient(-45deg,#222 10%,#ccc 60%,#eee);
+}
+/* 다리하단 가상요소로 부츠만들기 */
+.leg span::before{
+    content: '';
+    display: block;
+    position: absolute;
+    top: 80px;
+    left: -4px;
+    width: 70px;
+    height: 150px;
+    border: 4px solid #222;
+    border-top: 20px solid #222;
+
+     /* 선형 그라데이션 */
+     background-image: linear-gradient(-90deg,#222 10%,#ccc 60%,#eee);
+}
+
 /* 왼다리 */
+.l1{
+    left: -15px;
+}
 /* 오른다리 */
+.l2{
+    right:-15px;
+}
+/* 어깨공통 */
+.shd{
+    top: 10px;
+    width: 70px;
+    height: 90px;
+}
 /* 왼어깨 */
+.s1{
+    left: -112px;
+    border-radius: 50% 0 0 50%;
+    transform: rotate(-8.4deg);
+}
 /* 오른어깨 */
+.s2{
+    right: -112px;
+    border-radius: 0 50% 50% 0;
+    transform: rotate(8.4deg);
+}
+/* TV */
+.tv{
+    top: 50px;
+    left: 10px;
+    width: 180px;
+    height: 138px;
+    border-radius: 5px;
+    background: url(../images/tv.jpg) no-repeat center/cover;
+}
+/* 스크린 */
+.screen{
+    position: absolute;
+    top: 14px;
+    left: 9px;
+    width: 129px;
+    height: 100px;
+    border-radius: 15px;
+    background-color: #000;
+    /* 자식요소 아이프레임 
+    넘치는 부분 숨기기 */
+    overflow: hidden;
+}
+/* 동영상 iframe */
+.screen iframe{
+    position: absolute;
+    top: 0px;
+    left: -19px;
+    width: 174px;
+    height: 100px;
+    /* 아이프레임 기본보더없앰 */
+    border: none;
+}
 
-
-
-/******************************** 3. 하단영역 ********************************/
+/********************* 3. 하단영역 *********************/
 
 
