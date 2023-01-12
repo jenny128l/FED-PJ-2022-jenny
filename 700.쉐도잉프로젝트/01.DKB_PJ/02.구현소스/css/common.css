@@ -196,6 +196,14 @@ aside.tmenu {
     /* 플렉스 박스 : 하위 li요소 옆으로 흐름! */
     display: flex;
 }
+.join a{
+    font-size: 15px;
+    text-decoration: none;
+    margin-right: 10px;
+}
+.join a:hover{
+    color: #ccc;
+}
 /* sns li박스 */
 .sns li {
     width: 30px;
