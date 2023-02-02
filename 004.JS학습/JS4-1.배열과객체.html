@@ -393,15 +393,15 @@
                 3. 객체를 쌤께 전송!
             **********************************************/
 
-            var jenObj = {
+            var tomObj = {
                 // 1. 영화제목
-                제목: "포레스트 검프",
+                제목: "탑건-매버릭",
                 // 2. 감독
-                감독: "로버트 저메키스",
+                감독: "조셉 코신스키",
                 // 3. 배우
-                배우: "톰 행크스",
+                배우: "톰 크루즈, 마일즈 텔러",
                 // 4. 장르
-                장르: "드라마,코미디",
+                장르: "액션",
                 // 5. 관람가
                 관람가: "12세 관람가",
                 // 6. 예고편
@@ -410,10 +410,10 @@
                     // alert("예고편");
 
                     // 플레이함수 호출
-                    playMv("bLvqoHBptjg");
+                    playMv("Mrj9XACVJ8U");
 
                 } ///// 예고편 메서드 ////
-            }; ///////////// jenObj 객체 //////////////
+            }; ///////////// tomObj 객체 //////////////
 
 
             // 출력대상 : tg[6]
@@ -422,6 +422,7 @@
             tg[5].style.lineHeight = "34px";
             // 손가락 모양
             tg[5].style.cursor = "pointer";
+            tg[5].style.fontSize = "14px";
 
             /////////////////////////////
             // 내용 출력하기 함수로 변경!!!
@@ -429,18 +430,18 @@
             var expFn = function(){
                 
                 tg[5].innerHTML = `
-                ♣ 영화명 : ${jenObj["제목"]}
-                ♣ 감독 : ${jenObj.감독} <br>
-                ♣ 배우 : ${jenObj.배우}
-                ♣ 장르 : ${jenObj.장르}
-                ♣ 등급 : ${jenObj.관람가}
+                ♣ 영화명 : ${tomObj["제목"]}
+                ♣ 감독 : ${tomObj.감독} <br>
+                ♣ 배우 : ${tomObj.배우}
+                ♣ 장르 : ${tomObj.장르}
+                ♣ 등급 : ${tomObj.관람가}
                 `;
                 // 툴팁 보이기
                 tg[5].title =
-                `클릭하시면 ${jenObj.제목} 예고편을 보실 수 있습니다!`;
+                `클릭하시면 ${tomObj.제목} 예고편을 보실 수 있습니다!`;
                 
                 // 예고편  메서드 호출
-                tg[5].onclick = jenObj.예고편;
+                tg[5].onclick = tomObj.예고편;
                 
             }; ///////// expFn 함수 ////////
             
@@ -449,7 +450,10 @@
             
             
             
-            
+            // 버튼출력대상 : tg[7]
+
+            // 줄간격 조정
+            tg[6].style.lineHeight = "20px";
             
 
 
@@ -468,23 +472,36 @@
                     // 1. 버튼텍스트
                     var btxt = this.innerText;
                     console.log(btxt);
-
+                    
                     // 할당전 이전 영화객체
-                    console.log(jenObj);
+                    console.log(tomObj);
 
                     // 2. 버튼텍스트에 해당하는 객체를 기존 변수에 할당하기
                     // switch()문사용
                     // 새로운객체를 기존객체에 할당하기(변경하기)
                     switch(btxt){
-                        case "성우초이스": jenObj = SW_obj; break;
-                        case "찬초이스": jenObj = jcObj; break;
-                        case "수희초이스": jenObj = SuheeObj; break;
-                        case "유정초이스": jenObj = aladdin; break;
-                        case "성해초이스": jenObj = shObj; break;
+                        case "성우초이스": tomObj = SW_obj; break;
+                        case "찬초이스": tomObj = jcObj; break;
+                        case "수희초이스": tomObj = SuheeObj; break;
+                        case "유정초이스": tomObj = aladdin; break;
+                        case "성해초이스": tomObj = shObj; break;
+                        case "소미초이스": tomObj = somObj; break;
+                        case "수진초이스": tomObj = SJObj; break;
+                        case "요한초이스": tomObj = yhObj; break;
+                        case "다미초이스": tomObj = mov; break;
+                        case "민경초이스": tomObj = mkObj; break;
+                        case "다인초이스": tomObj = leaveObj; break;
+                        case "새미초이스": tomObj = SMObj; break;
+                        case "명진초이스": tomObj = mjObj; break;
+                        case "동호초이스": tomObj = GSObj; break;
+                        case "지은초이스": tomObj = jenObj; break;
+                        case "동한초이스": tomObj = myV; break;
+                        case "승준초이스": tomObj = motoraObj; break;
+                        case "해원초이스": tomObj = seoObj; break;
                     } ///////// switch case문 ////////
 
                     // 기존 영화객체변수값이 변경되었는지 확인!
-                    console.log(jenObj);
+                    console.log(tomObj);
 
                     // 3. 실제 적용 요소에 객체데이터 넣기
                     // 위에서 함수로 생성한 expFn함수를 호출!
@@ -518,7 +535,9 @@
                 mvbx.innerHTML = `
                     <div id="mv">
                         <!-- 유튜브 아이프레임 -->
-                        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/${mvcode}?autoplay=1" allow="autoplay" style="border:none"></iframe>
+                        <iframe width="100%" height="100%" 
+                        src="https://www.youtube.com/embed/${mvcode}?autoplay=1" 
+                        allow="autoplay" style="border:none"></iframe>
                         <!-- 닫기버튼 --> 
                         <button class="cbtn">×</button>
                     </div>
@@ -579,6 +598,19 @@
             <button>수희초이스</button>
             <button>유정초이스</button>
             <button>성해초이스</button>
+            <button>소미초이스</button> <br>
+            <button>수진초이스</button>
+            <button>요한초이스</button>
+            <button>다미초이스</button>
+            <button>민경초이스</button>
+            <button>다인초이스</button>
+            <button>새미초이스</button> <br>
+            <button>명진초이스</button>
+            <button>동호초이스</button>
+            <button>지은초이스</button>
+            <button>동한초이스</button>
+            <button>승준초이스</button>
+            <button>해원초이스</button>
         </div>
 
         <!-- 예고편 동영상용 박스 -->
