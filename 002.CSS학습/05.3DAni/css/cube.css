@@ -43,7 +43,7 @@ body{
     transform: 
     rotateX(10deg) rotateY(30deg);
 
-    outline: 2px solid red;
+    /* outline: 2px solid red; */
 }
 
 /* 큐브각면 공통 */
