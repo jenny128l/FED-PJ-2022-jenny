@@ -28,6 +28,7 @@ body.on .cat{
 
     /* 애니메이션:이시이지반방마 */
     animation: cat 2s ease-out 2s forwards;
+    
 }
 /* 애니메이션 지연시간 셋팅 */
 body.on .cat:nth-child(2){
