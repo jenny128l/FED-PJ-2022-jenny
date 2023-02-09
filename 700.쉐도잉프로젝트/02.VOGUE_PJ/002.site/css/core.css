@@ -28,15 +28,15 @@ font-family: 'Roboto Condensed', sans-serif;
   2. rbx - ratio box 비율박스
   3. rbxIn - box in ratio box 비율유지 속박스
   4. fbx - flex box 플렉스 디스플레이 박스
-  5. pt1, pt2 - part1, part2 각 부분박스
+  5. pt1, pt2 - part1, part2 각 부분박스(비율적용)
   6. cbx - content box 내용박스
   7. bgi - background image 관련 속성
 */
 
 /* 공사중 표시 */
-/* body * {
+body * {
     outline: 1px dashed gray;
-} */
+}
 
 /************* 2. 공통 class *************/
 
