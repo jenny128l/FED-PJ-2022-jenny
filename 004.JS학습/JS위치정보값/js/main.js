@@ -26,7 +26,7 @@
     [ 가로크기 ]
     - clientWidth : 패딩점퍼를 입고 있는 클라이언트님!
         padding을 포함한 폭
-    - scrollWidth :  가로로스크롤내용이 들어가니까 scroll!
+    - scrollWidth :  가로스크롤내용이 들어가니까 scroll!
         padding을 포함한 화면 상에 표시되지 않은 콘텐츠를 포함한 폭
     - offsetWidth : 보더,패딩,세로스크롤바 트랙이 다 들어가니 옵셋!
         border, padding, 세로스크롤바 트랙을 포함한 폭
@@ -173,6 +173,17 @@ window.addEventListener("DOMContentLoaded", () => {
         qs(".i9").innerText = e.clientX;
         qs(".i10").innerText = e.clientY;
     };
+
+    // .inbox하위 .bird(벌새)위에서 마우스움직일때
+    // 이벤트 버블링으로 offsetX,offsetY는 이벤트 대상의
+    // 위치를 리턴하므로 벌새값이 .inbox이벤트찍기에 나타남!
+    // .bird의 같은 이벤트를 버블링막기를 하면
+    // 벌새위에서는 이벤트가 발생하지 않는다!(버블링되지 않는다!)
+
+    // 이벤트버블링 막기를 할 수 있다~!
+    // bird.onmousemove = (e)=>{
+    //     e.stopPropagation();
+    // }; /////// mousemove ///////
 
     // [3. 클릭된 박스요소의 크기,위치 찍어보기]
     for (let x of pnt) {
