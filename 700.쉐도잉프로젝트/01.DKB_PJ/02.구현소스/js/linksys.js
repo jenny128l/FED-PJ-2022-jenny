@@ -92,16 +92,25 @@ window.addEventListener("DOMContentLoaded", () => {
 
             // 기타 내부시스템 페이지 이동하기 ////
             else {
-                location.href = url + ".html";
+
+                // 메인페이지 이동일 경우
+                // html?code=m 을 보내주자!
+
+                location.href = 
+                url + ".html"+
+                (atxt==="tvN로고"?"?code=m":"");
                 /* 
                 [ 페이지 이동하기 ]
+
                 ((현재창열기))
                 window.location.href = 이동할주소
                 -> window는 주로 생략함
                 location.href = 이동할주소
+
                 ((새창열기))
                 window.open()
                 .location.href = 이동할주소
+
                 -> window.open()은 원래 팝업창 띄우기임!
                 */
             } ///// else //////
@@ -119,4 +128,3 @@ window.addEventListener("DOMContentLoaded", () => {
         }; //////// click 이벤트함수 ////
     } //////// for of문 //////////////
 }); ///////////// 로드구역 ////////////////////
-
