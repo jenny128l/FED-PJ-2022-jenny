@@ -14,6 +14,44 @@
                 overflow-x: hidden;
             }
 
+            /* GNB박스 */
+            .gnb{
+                position: fixed;
+                top: 5vh;
+                left: 50%;
+                transform: translateX(-50%);
+                /* 가로중앙이동 */
+                background-color: #fff;
+                border-radius: 35px;
+            }
+            /* 가상요소로 움직이는 배경박스 만들기 */
+            .gnb::before{
+                content: '';
+                position: absolute;
+                width: 206px;
+                height: 78px;
+                background-color: red;
+            }
+            .gnb ul{
+                position: relative;
+                /* 가상요소보다 위! */
+                display: flex;
+                margin: 0;
+                padding: 0;
+                list-style: none;
+            }
+            .gnb a{
+                text-decoration: none;
+                color: #000;
+                font-size: 24px;
+                display: block;
+                padding: 23px 35px;
+            }
+            /* 마우스 오버시 글자색변경 */
+            .gnb a:hover{
+                color: #fff;
+            }
+            
             .pg {
                 height: 100vh;
                 outline: 1px solid blue;
