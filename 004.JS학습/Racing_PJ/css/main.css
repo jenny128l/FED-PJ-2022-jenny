@@ -94,6 +94,7 @@ body *{
     top: 600px;
     left: 0;
 }
+/* 토끼,거북 공통 class */
 .racer{
     width: 200px;
     transform-origin: right;

@@ -1,13 +1,14 @@
 // Racing PJ 메인 JS - main.js
 
 /// 요소선택함수 ////////
-const qs = (x) => document.querySelector(x);
-const qsa = (x) => document.querySelectorAll(x);
+const qs = x => document.querySelector(x);
+const qsa = x => document.querySelectorAll(x);
 // 메시지함수 //////
-const cg = (x) => console.log(x);
+const cg = x => console.log(x);
+
 
 //////////////// 로드구역 /////////////////////////
-window.addEventListener("DOMContentLoaded", () => {
+window.addEventListener("DOMContentLoaded", ()=>{
     console.log("로딩완료!");
 
     /********************************************** 
@@ -43,98 +44,128 @@ window.addEventListener("DOMContentLoaded", () => {
     // (5) 메시지박스 : #msg
     const msg = qs("#msg");
     // (6) 토끼, 거북 위치값 변수
-    let r1pos = 0,
-        t1pos = 0;
-    // 토끼위치 : r1pos / 거북위치 : t1pos
+    let r1pos = 0, t1pos = 0;
+    // 토끼위치 : r1pos / 거북위치 : t1pos 
 
     // cg(msg);
 
     // 2. 이벤트 설정하기 ////////////
     // 대상: 버튼들 - btns변수
-    btns.forEach((ele) => {
+    btns.forEach(ele=>{
         // 1. 이벤트설정
-        ele.onclick = (e) => {
+        ele.onclick = e => {
             // (0) 기본기능막기
             e.preventDefault();
             // (1) 버튼종류확인 : 버튼텍스트
             let btxt = ele.innerText;
             cg(btxt);
 
-            // (2) 버튼별 기능분기
-            // (2-1) 토끼이동
-            if (btxt === "토끼출발") {
+            // (2) 버튼별 기능분기///
+
+            // (2-1) 토끼이동 //////
+            if(btxt==="토끼출발"){
                 // 토끼 자동이동함수 호출!
                 goR1();
-                 
+
             } ///////// if문 : 토끼출발 ////////
-            // (2-2) 거북이동
-            else if (btxt === "거북출발") {
+
+            // (2-2) 거북이동 //////////
+            else if(btxt==="거북출발"){
+                // 거북멈춤 상태값(t1Stop)이 1이면 돌아가!
+                if(t1Stop) return;
+                
                 // 위치이동값 셋팅
                 t1pos += 16;
                 // 위치이동하기
                 t1.style.left = t1pos + "px";
-
-                // 토끼이동함수 호출!
+                
+                // 토끼 자동이동함수 호출!
                 goR1();
-            } ///////// else if문 : 토끼출발 ////////
+
+            } ///////// else if문 : 토끼출발 /////
 
             // (2-3) 처음으로 버튼 클릭시
             else if(btxt==="처음으로"){
-                // 브라우저 캐싱을 지우고  다시부르기
+
+                // 브라우저 캐싱을 지우고 다시부르기
                 // location.replace("index.html");
 
                 // 현재 페이지 리로딩
                 location.reload();
-            }////// else if문 : 처음으로 /////
+            } //////// else if문 : 처음으로 /////
+
 
         }; /////// click ////////
     }); //////////// forEach //////////
 
-    /**********************************
+
+
+    /*********************************** 
         함수명: goR1
         기능: 토끼자동이동(인터발함수)
-    **********************************/
-    let autuI; // 인터발용변수
-    function goR1() {
-        // 할당안된변수값은 undefined이고
-        // if문에서 false 처리되므로
+    ***********************************/
+   let autoI;// 인터발용변수
+   function goR1(){
+        // 할당안된변수값은  undefined이고
+        // if문에서 false처리되므로
         // 할당전 상태일때만 if문에 들어가게
         // 하기위해 !(NOT연산자)를 사용하면 된다!
 
         // cg(autoI);
-        cg(level.value);
+        // cg(level.value);
 
-        if(!autoI){ //// 할당전에 1번만 허용!
+        if(!autoI){ /// 할당전에 1번만 허용!
             autoI = setInterval(() => {
-                r1.style.left = ++r1pos + "px";
-            }, 10);
-            // 인터발 시간은 선택박스의 
-            // 옵션값을 읽어서 사용한다! -. level.value
-            // 옵션값들: 10,9,8,7,6,5,4
-        } ///// if함수 //////
 
-    } ////// goR1함수 ///////
+                // 토끼 위치이동
+                r1.style.left = (++r1pos) + "px";
 
-    /*************************************************************
-        함수명:whoWinner
+                // 토끼&거북 위치값체크후 승자판별함수호출
+                whoWinner();
+
+            }, level.value);
+            // 인터발 시간은 선택박스의
+            // 옵션값을 읽어서 사용한다! -> level.value
+            // 옵션값들 : 10,9,8,7,6,5,4
+        } //////////// if ///////////
+
+   } /////////////// goR1 함수 ///////////
+
+   /***************************************** 
+        함수명: whoWinner
         기능: 기준값 보다 레이서위치값이 큰경우
             승자를 판별하여 메시지를 보여준다!
-    
-    *************************************************************/
-   function whoWinner(){
+   *****************************************/
+  let t1Stop = 0;//거북멈춤값(1멈춤,0허용)
+  function whoWinner(){
     // cg("토끼:"+r1pos);
     // cg("거북:"+t1pos);
 
-    // 1. 토끼 /거북의 위치값이 기준값 이상일때
-    // 기준값: 605px
+    // 1. 토끼 / 거북의 위치값이 기준값 이상일때
+    // 기준값: 650px
     if(r1pos >= 650 || t1pos >= 650){
 
-        // (1) 토끼야 멈춰라! -> 인터발함수지우기
+        // (1) 토끼야 멈춰라! -> 인터발함수지우기!
         clearInterval(autoI);
-        // (2) 거북아 멈춰라!
+        
+        // (2) 거북아 멈춰라! -> 거북멈춤상태값 1로 변경!
+        t1Stop = 1;
 
-    } //////////// if ////////////
+        // (3) 승자편별 후 메시지 보여주기!
+        if(r1pos > t1pos) msg.innerText ="토끼승!"
+        if(r1pos < t1pos) msg.innerText ="거북승!"
+        else msg.innerText = "비김!재승부!"
 
-   } ////////// whoWinner함수 //////////
+    } ///////////// if ///////////////
+
+
+
+  } //////////// whoWinner 함수 /////////////
+
+
+
+    
+
+
 
 }); /////////// 로드구역 ///////////////////////////
