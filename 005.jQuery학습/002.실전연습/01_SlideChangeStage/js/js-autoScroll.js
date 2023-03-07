@@ -6,30 +6,33 @@ setTimeout(() => {
     window.scrollTo(0, 0);
 }, 100);
 
-
 // 로딩함수 호출 /////////
 window.addEventListener("DOMContentLoaded", loadFn);
 
-/*************************************************
+
+/************************************ 
     함수명: loadFn
     기능: 페이지 로딩시 기능수행
-*************************************************/
-
+************************************/
 function loadFn() {
     // 호출확인
     console.log("로딩완료!");
-    
-    // 이벤트 연결 대상선정하기 //////
+
+    // 이벤트 연결 대상선정하기 /////
     // GNB메뉴
     const gnb = document.querySelectorAll(".gnb a");
     console.log(gnb);
 
-    // 이벤트 연결 함수등록하기 ///////////////////////
+    // 이벤트 연결 함수등록하기 /////
     // GNB메뉴 이벤트연결
-    gnb.forEach((ele,idx)=>{// ele-요소,idx-순번
-        ele.addEventListener("click",()=>movePg(idx));
+    gnb.forEach((ele,idx,obj)=>{ // ele-요소, idx-순번, obj - 전체객체
+        ele.addEventListener("click",()=>movePg(idx,obj));
+        // 전체 객체(obj)를 함수에 전달하는 이유는?
+        // -> 인디케이터도 GNB과 같은 기능을 수행하기때문에
+        // 호출시 자기자신 전체를 보내야 각각에 맞게 기능을 수행할 수 있음
 
-    }); ////forEash ////////
+    }); /////// forEach /////////////////
+    
 
     /************************************************* 
         [ 휠 이벤트를 이용한 페이지 이동 컨트롤하기! ]
@@ -117,8 +120,8 @@ function loadFn() {
         e.preventDefault();
 
         // 광스크롤막기! ///////
-        if(prot_sc) return;
-        prot_sc = 1; //신호1개만 허용!
+        if(prot_sc) return; 
+        prot_sc = 1; // 신호1개만 허용!
         setTimeout(()=>prot_sc=0,800);
         // 0.8초의 시간후 다시 허용상태전환 //
 
@@ -157,30 +160,37 @@ function loadFn() {
         // 세로 이동위치: 윈도우높이값*페이지번호
     } ////////////// wheelFn 함수 //////////
 
-/*********************************************
-    함수명 : movePg
-    기능 : 메뉴 클릭시 해당위치로 이동하기
-*********************************************/
 
-function movePg (seq){ // seq - 순번
-    // 1. 기본기능막기
-    event.preventDefault();
+    /*************************************** 
+        함수명: movePg
+        기능: 메뉴 클릭시 해당위치로 이동하기
+    ***************************************/
+   function movePg (seq,obj){ // seq - 순번, obj - 요소전체객체
+        // 1.기본기능막기
+        event.preventDefault();
 
-    // 2. 호출확인
-    console.log("이동!",seq);
+        // 2.호출확인
+        console.log("이동!",seq,obj);
 
-    // 3. 페이지번호(pgnum)업데이트 하기!
-    pgnum = seq;
-    console.log("메뉴클릭 페이지번호:",pgnum);
+        // 3. 페이지번호(pgnum)업데이트 하기!
+        pgnum = seq;
+        console.log("메뉴클릭 페이지번호:",pgnum);
 
-    // 4. 페이지이동하기
-    window.scrollTo(0, window.innerHeight * pgnum);
+        // 4. 페이지 이동하기
+        window.scrollTo(0, window.innerHeight * pgnum);
 
-    // 5. 메뉴 초기화하기(클래스 on 제거하기)
-    for(let x of gnb) x.parentElement.classList.remove("on");
+        // 5. 메뉴 초기화하기(클래스 on 제거하기)
+        for(let x of obj) x.parentElement.classList.remove("on");
 
-    // 6. 해당메뉴에 클래스 넣기
+        // 6. 해당메뉴에 클래스 넣기
+        obj[seq].parentElement.classList.add("on");
 
-} //////////movePg 함수 /////////////////
+
+   } ///////////// movePg 함수 //////////////
+
+
+
+
+
 
 } ////////////// loadFn 함수 ///////////////////
