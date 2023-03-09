@@ -7,27 +7,26 @@
 	<script>
 		$(()=>{
 			// 미션: 클래스가 group인 요소를 선택하여
-			// li 클릭할 경우 배경색을 lime
+			// li를 클릭할 경우 배경색을 lime
 			// 글자크기는 52px로 변경하시오.
 			// 단, transition 을 "all .6s"로 
 			// 설정하여 애니메이션 되게 하시오.
 			// 그리고 개별적으로 적용되게할것!(this사용)
 			$(".group li").click(
 				// function(){
-					(e)=>{ //e는 이벤트전달변수!
+				(e)=>{ // e는 이벤트전달변수!
 				// 클릭된 li자신 -> this!
 				// 화살표함수 this는 event.currentTarget사용!
-				 console.log(this);
-				 console.log(e.currentTarget);
+				console.log(this);
+				console.log(e.currentTarget);
 
 				// $(this).css({
 				$(e.currentTarget).css({
 					background:"lime",
 					"font-size":"52px",
 					transition:"all .6s"
-				});///// css /////
-				
-			}); /////// click ///////
+				});///// css //////
+			}); /////// click //////////////
 			
 			
 			
