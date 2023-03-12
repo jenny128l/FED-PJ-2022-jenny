@@ -19,7 +19,11 @@ body{
     /* 콤마로 구분하여 여러 배경이미지를 넣을 수 있고
     먼저쓴 이미지가 위에 온다! */
     background: 
+<<<<<<< HEAD
     url(../images/bg_logo_a_01.png) no-repeat fixed 10% 20%/10%,
+=======
+    url(../images/bg_logo_a_01.png) no-repeat fixed 10% 28%/10%,
+>>>>>>> e4638dfeb3f8ec3fea67c53bfa590d691003179c
     url(../images/bg_mainvisual.jpg) no-repeat fixed center/cover;
     /* 외부CSS에서 이미지 경로를 잡을때 주의사항!
     -> CSS파일 위치에서 이미지를 찾아가야함! */
@@ -30,6 +34,11 @@ body{
 /**************** 메인영역 ****************/
 /* 메인영역 속박스 */
 .cont{
+<<<<<<< HEAD
+=======
+    position: relative;
+    /* 부모자격 - #mvtxt */
+>>>>>>> e4638dfeb3f8ec3fea67c53bfa590d691003179c
     overflow: hidden;
     /* 자식요소 위,아래 마진 포함 */
 }
@@ -138,15 +147,30 @@ body{
 .cat:hover .cd{
     height: 250px;
 }
+<<<<<<< HEAD
+=======
+/* 중간 미디어쿼리에서 겹쳐질때 위로 올라오도록 설정추가 */
+.cat:hover{
+    z-index: 1;
+}
+>>>>>>> e4638dfeb3f8ec3fea67c53bfa590d691003179c
 
 /* 캐릭터 설명 타이틀 */
 .cd h3{
     font-family: 'Gugi', cursive;
+<<<<<<< HEAD
     /* 글자크기 최대24px, 화면가로크기의1.7% */
     font-size: min(24px,1.7vw);
     font-weight: normal;
     white-space: nowrap;
     /* 줄바꿈 방지 */
+=======
+    /* 글자크기 최대24px, 화면가로크기의 1.7% */
+    font-size: min(24px,1.7vw);
+    font-weight: normal;
+    /* 줄바꿈 방지 */
+    white-space: nowrap;
+>>>>>>> e4638dfeb3f8ec3fea67c53bfa590d691003179c
     padding: 15px 10px 5px;
     letter-spacing: -1px;
 }
@@ -208,7 +232,11 @@ body{
 /* 등장글자 이미지 */
 #mvtxt{
     position: absolute;
+<<<<<<< HEAD
     top: 30vh;
+=======
+    top: 15vh;
+>>>>>>> e4638dfeb3f8ec3fea67c53bfa590d691003179c
     right: 5vw;
     width: min(20vw,327px);
 }

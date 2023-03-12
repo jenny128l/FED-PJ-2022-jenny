@@ -7,10 +7,16 @@
 
 
 /* 공사중 표시 */
+<<<<<<< HEAD
  /* body * {
     outline: 1px dashed ghostwhite;
  }  */
  
+=======
+/* body * {
+    outline: 1px dashed ghostwhite;
+} */
+>>>>>>> e4638dfeb3f8ec3fea67c53bfa590d691003179c
 
 /* 전체배경색 */
 body{
@@ -66,7 +72,11 @@ body{
     position: relative;
     /* 부모자격 : .smenu */
     padding-bottom: 5px;
+<<<<<<< HEAD
     /* 서브메뉴와 공간을 연결을 위해 하단패딩줌! */
+=======
+    /* 서브메뉴와 공간연결을 위해 하단패딩줌! */
+>>>>>>> e4638dfeb3f8ec3fea67c53bfa590d691003179c
 }
 /* 상위li 두번째부터 */
 .gnb ul>li+li{
@@ -77,6 +87,7 @@ body{
     /* 트랜스폼 적용위해 인라인블록 */
     display: inline-block;
     font-size: 2rem;/* 20px */
+<<<<<<< HEAD
 }
 /* 오버시 변경 */
 .gnb ul>li:hover>a{
@@ -84,6 +95,17 @@ body{
    color: aquamarine;
    /* 애니메이션:이시이지반방마 */
    animation: titAni .5s ease-in infinite alternate;
+=======
+    /* 트랜지션 */
+    transition: .3s;
+}
+/* 오버시 변경 */
+.gnb ul>li:hover>a{
+    transform: scale(1.3);
+    color: aquamarine;
+    /* 애니메이션: 이시이지반방마 */
+    animation: titAni .5s ease-in infinite alternate;
+>>>>>>> e4638dfeb3f8ec3fea67c53bfa590d691003179c
 }
 
 /* 서브메뉴 */
@@ -146,48 +168,317 @@ body{
 }
 /* 오버시 가상요소로 이모티콘 */
 .smenu a:hover::after{
+<<<<<<< HEAD
     content: '🎬';
+=======
+    content: '🎃';
+>>>>>>> e4638dfeb3f8ec3fea67c53bfa590d691003179c
     /* 오른쪽 끝으로 보내기 */
     float: right;
 }
 /* 예매 */
 .gnb ul>li:nth-child(2) 
 .smenu a:hover::after{
+<<<<<<< HEAD
     content: '🌭';
+=======
+    content: '🎪';
+>>>>>>> e4638dfeb3f8ec3fea67c53bfa590d691003179c
 }
 /* 극장 */
 .gnb ul>li:nth-child(3) 
 .smenu a:hover::after{
     content: '👓';
 }
+<<<<<<< HEAD
 /* 이벤트&컬쳐 */
 .gnb ul>li:nth-child(4) 
 .smenu a:hover::after{
     content: '🥕';
+=======
+/* 이벤트&컬처 */
+.gnb ul>li:nth-child(4) 
+.smenu a:hover::after{
+    content: '😻';
+>>>>>>> e4638dfeb3f8ec3fea67c53bfa590d691003179c
 }
 
 /* 서브메뉴 li보더 상단 구분선 클래스 */
 .bdt{
+<<<<<<< HEAD
     border-top:1px solid #ccc;
 }
 
+=======
+    border-top: 1px solid #ccc;
+}
+
+/* 영사기박스 */
+#cam{
+    position: absolute;
+    bottom: -10px;
+    right: -60px;
+    z-index: -1;
+    /* 메뉴보다 아래! */
+}
+/* 영사기 이미지 */
+#cam img{
+    position: relative;
+    z-index: 1;
+    /* 영사기가 위! */
+    width: 50px;
+    transform: rotate(25deg);
+    /* 트랜지션: 속시이지 
+    - 돌아올때 0.3초 빔시간 기다림*/
+    transition: .5s ease-out .3s;
+}
+/* .gnb에 오버시 영사기회전 */
+.gnb:hover #cam img{
+    transform: rotate(0deg);
+    /* 오버시 기다림 없음 */
+    transition-delay: 0s;
+}
+/* 빔박스 */
+.beam{
+    position: absolute;
+    top: -16px;
+    right: 13px;
+    width: 0;/* 200px; */
+    height: 70px;
+    background: url(../images/bim.png) no-repeat;
+    background-position: right center;
+    background-size: auto 100%;
+    /* outline: 2px dotted lime; */
+
+    /* 트랜지션: 속시이지 */
+    transition: .3s ease-out;
+}
+/* .gnb에 오버시 빔쏘기 */
+.gnb:hover #cam .beam{
+    width: 200px;
+    /* 카메라 도는 0.5초 기다림 */
+    transition-delay: .5s;
+    /* 애니메이션: 이시이지반방마 */
+    animation: beamAni .01s linear infinite alternate;
+}
+/* 빔 빛흔들리기 애니 키프레임 */
+@keyframes beamAni {
+    to{
+        opacity: 0.5;
+    }
+}/* 키프레임 */
+
+/* 1-3.찾아오는길 애니박스 */
+.anibx{
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* 부모는? .top */
+    width: 144px;
+    height: 80px;
+    /* 원근설정 : 직계하위 span적용! */
+    perspective: 50vh;
+    /* 손가락모양 */
+    cursor: pointer;
+}
+/* 극장가는 길 타이틀박스 */
+.anibx>span{
+    /* 커튼 대문 역할 */
+    position: absolute;
+    /* 변경속성 top 초기값 셋팅!(애니위해) */
+    top: 0;
+    z-index: 1;
+    display: block;
+    width: 144px;
+    height: 80px;
+    /* 나간글자 숨기기 */
+    overflow: hidden;
+    text-align: center;
+    line-height: 80px;
+    font-family: 'Cute Font', cursive;
+    color: #fff;
+    font-size: 20px;
+    /* 줄바꿈방지 */
+    white-space: nowrap;
+    /* 배경이미지넣기 */
+    background: url(../images/curtain.jpg) no-repeat;
+    /* 애니메이션: 이시이(지)반(방마) */
+    animation: anibxAni 2.8s cubic-bezier(0.68, -0.55, 0.27, 1.55) infinite;
+    /* 트랜지션:속시이지 */
+    transition: top .4s ease-in-out .2s;
+}
+/* 오버시 + 클래스 "on"적용시
+ 타이틀애니박스 보이기 */
+.anibx:hover>span,
+.anibx.on>span{
+    top: -100%;
+    /* top은 기본값이 auto이므로
+    애니메이션 하려면 top:0 으로 초기값 필요! */
+    outline: 1px solid aqua;
+}
+/* 타이틀 애니 키프레임 */
+@keyframes anibxAni {
+    0%{
+        text-indent: 0;
+    }
+    /* 50%~70% 오른쪽으로 나감! */
+    50%{
+        text-indent: 0;
+    }
+    70%{
+        text-indent: 250px;
+    }
+    /* 위치변경 왼쪽 바깥 */
+    70.1%{
+        text-indent: -250px;
+    }
+    /* 80%~100% 왼쪽에서 들어옴! */
+    80%{
+        text-indent: -250px;
+    }
+    100%{
+        text-indent: 0;
+    }
+}/* 키프레임 */
+
+/* 샐애니박스 */
+.cellAni{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 144px;
+    height: 80px;
+
+    /* 배경넣기 */
+    background: url(../images/street.jpg) repeat-x;
+    background-size: auto 100%;
+
+    /* 애니메이션: 이시이지반방마 */
+    animation: street 4s linear infinite;
+}
+
+/* 스크린배경이동 키프레임 */
+@keyframes street {
+    to{
+        background-position: -136px 0;
+    }
+}
+/* 키프레임 */
+
+/* 3-1.걷는존 */
+.spani1{
+    position: relative;
+    width: 30%;
+    height: 100%;
+    margin: 0 auto;
+
+    background: url(../images/spAni03.png) no-repeat;
+    background-size: auto 100%;
+
+    /* 애니메이션: 이시이지반방마 */
+    animation: spani1 1s steps(8) infinite;
+
+    /* outline: 5px solid red; */
+}
+
+/* 걷는존 키프레임 */
+@keyframes spani1 {
+    to{
+        background-position: -362px 0;
+    }
+    /* 배경이미지 x축 이동일 경우
+    줄였을때 이미지 전체 가로크기를
+    마이너스 값으로 써주면된다! */
+}
+
+/* 키프레임 */
+/* 3-2.꼬마 */
+.spani2{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 20px;
+    height: 29px;
+    background: url(../images/spAni01.png) no-repeat;
+    /* 배경사이즈 변경 */
+    background-size: 200px;
+        /* 애니메이션: 이시이지반방마 */
+    animation: spani2 1s steps(10) infinite;
+}
+
+/* 꼬마 키프레임 */
+@keyframes spani2 {
+    to{
+        background-position: -200px 0;
+    }
+}
+/* 키프레임 */
+
+/* 3-3.몬스터 */
+.spani3{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 40px;
+    height: 40px;
+    background: url(../images/spAni02.png) no-repeat;
+    /* 배경사이즈 변경 */
+    background-size: 240px;
+    /* 애니메이션: 이시이지반방마 */
+    animation: 
+    spani3X 1s steps(6) infinite,
+    spani3Y 3s steps(3) infinite;
+    /* x축은 6장면을 1초간 작동
+    y축은 3줄을 3초간 작동 */
+}
+
+/* 몬스터 키프레임 X축 */
+@keyframes spani3X {
+    to{
+        background-position-x: -240px;
+    }
+    /* x축은 가로크기를 마이너스로 씀 */
+}
+/* 몬스터 키프레임 Y축 */
+@keyframes spani3Y {
+    to{
+        background-position-y: -120px;
+    }
+    /* y축은 세로크기를 마이너스로 씀 */
+}
+
+
+>>>>>>> e4638dfeb3f8ec3fea67c53bfa590d691003179c
 
 /**************** 2.메인영역 ****************/
 /* 속박스 */
 .cont{
     position: relative;
     /* 부모자격 - .screen */
+<<<<<<< HEAD
     height: 788px;
+=======
+    /* 비율설정 */
+    aspect-ratio: 1200/788;
+    /* height: 788px; */
+>>>>>>> e4638dfeb3f8ec3fea67c53bfa590d691003179c
     /* 극장배경 넣기 */
     background: url(../images/bg.jpg) no-repeat center top/100%;
 }
 /* 2-1.스크린 */
 .screen{
     position: absolute;
+<<<<<<< HEAD
     top: 136px;
     left: 256px;
     width: 702px;
     height: 398px;
+=======
+    top: 17.2%;
+    left: 21.3%;
+    width: 58.6%;
+    height: 50.6%;
+>>>>>>> e4638dfeb3f8ec3fea67c53bfa590d691003179c
     background-color: #000;
 }
 /* 유튜브 아이프레임 */
@@ -201,6 +492,7 @@ body{
 /* 2-2.예고편 선택메뉴 */
 .mlist{
     position: absolute;  
+<<<<<<< HEAD
     bottom: 61px;
     left: 50%;
     width: 702px;
@@ -209,6 +501,16 @@ body{
     /* 앱솔루트 부모자격이 있는 요소의
     overflow가 적용됨! */
     overflow: hidden;
+=======
+    bottom: 5.4%;
+    left: 50%;
+    width: 60%;
+    transform: translateX(-49%);
+
+    /* 앱솔루트 부모자격이 있는 요소의
+    overflow가 적용됨! -> li각각에 처리함 */
+    /* overflow: hidden; */
+>>>>>>> e4638dfeb3f8ec3fea67c53bfa590d691003179c
 
 }
 /* 선택메뉴 ul */
@@ -217,6 +519,7 @@ body{
     display: flex;
     /* 진행방향정렬 : 양쪽끝 맞춘후 사이간격일정 */
     justify-content: space-between;
+<<<<<<< HEAD
     
 }
 /* 선택메뉴 상위li */
@@ -227,6 +530,47 @@ body{
 .mlist img{
     width: 99px;
     height: 140px;
+=======
+    /* 원근3D적용 -> 보이는 화면 높이값의 50% */
+    perspective: 50vh;
+    
+}
+/* 상위li 두번째 부터 끝까지 왼쪽마진 */
+.mlist ul>li+li{
+    margin-left: 1.5%;
+}
+/* 선택메뉴 상위li */
+.mlist ul>li{
+    position: relative;
+    /* 부모자격 - .movtxt */
+    flex: 1;
+    /* 등분할설정 */
+    overflow: hidden;
+    
+    /* X축회전적용하기 */
+    transform: rotateX(30deg);
+    /* 회전축 변경 : 하단 */
+    transform-origin: bottom;
+    /* 트랜지션: 속시이지 */
+    transition: .4s;
+}
+/* 마우스 오버시 + 클래스"on"적용시
+포스터 일어나기! */
+.mlist ul>li:hover ,
+.mlist ul>li.on {
+    /* x축회전 */
+    transform: translateX(0);
+    /* 다른 li보다 위 */
+    z-index: 1;
+    /* 테두리 생김 */
+    outline: 1px solid aqua;
+}
+
+/* 포스터 이미지 */
+.mlist img{
+    width: 100%;
+    /* height: 140px; */
+>>>>>>> e4638dfeb3f8ec3fea67c53bfa590d691003179c
 }
 
 /* 영화정보박스 */
@@ -241,14 +585,24 @@ body{
     /* 앱솔루트 포지션 */
     position: absolute;
     top: 100%;
+<<<<<<< HEAD
     width: 99px;
     height: 140px;
+=======
+    width: 100%;
+    height: 100%;
+    /* 부모는? 싸고있는 li */
+>>>>>>> e4638dfeb3f8ec3fea67c53bfa590d691003179c
     text-align: center;
     background-color: rgba(0, 0, 0, 0.7);
 
     /* 글자셋팅 */
     font-family: 'Cute Font', cursive;
+<<<<<<< HEAD
     font-size: 14px;
+=======
+    font-size: min(14px,1.1vw);
+>>>>>>> e4638dfeb3f8ec3fea67c53bfa590d691003179c
     line-height: 2;
 
     /* 트랜지션: 속시이지 */
@@ -260,23 +614,45 @@ body{
     top: 0;
 }
 
+<<<<<<< HEAD
 
 /**************** 3.하단영역 ****************/
 .info{
+=======
+/* 영화정보박스 제목만 변경 */
+.movtxt li:first-child {
+    font-size: min(17px,1.2vw);
+    color: aqua;
+    white-space: nowrap;
+}
+
+
+/**************** 3.하단영역 ****************/
+.info{
+    /* 플렉스박스 */
+>>>>>>> e4638dfeb3f8ec3fea67c53bfa590d691003179c
     display: flex;
     /* 수직방향정렬 : ai */
     align-items: center;
     height: 100px;
 }
+<<<<<<< HEAD
 /* 3-1.로고 */
 .logo{
 margin-right: 20px;
+=======
+
+/* 3-1.로고 */
+.logo{
+    margin-right: 20px;
+>>>>>>> e4638dfeb3f8ec3fea67c53bfa590d691003179c
 }
 /* 3-2.회사정보 */
 .corp address{
     font-family: 'Cute Font', cursive;
     color: #fff;
     font-style: normal;
+<<<<<<< HEAD
     line-height: 2rem;
     font-size: 18px;
 }
@@ -287,6 +663,18 @@ margin-right: 20px;
 }
 .sns ol{
 /* 플랙스박스 */
+=======
+    font-size: 1.8rem;
+    line-height: 2rem;
+}
+/* 3-3.SNS */
+.sns{
+    /* 오른쪽 끝위치 */
+    margin-left: auto;
+}
+.sns ol{
+    /* 플렉스박스 */
+>>>>>>> e4638dfeb3f8ec3fea67c53bfa590d691003179c
     display: flex;
 }
 .sns li{
@@ -306,10 +694,15 @@ margin-right: 20px;
     font-size: 34px;
     text-align: center;
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> e4638dfeb3f8ec3fea67c53bfa590d691003179c
 /* sns 오버시 글자색 */
 
 /* 페북 */
 .sns a[class$=book]:hover{
+<<<<<<< HEAD
     color:lightskyblue;
 }
 /* 트위터 */
@@ -322,6 +715,21 @@ margin-right: 20px;
 }
 /************************************************ 
     속성선택자: [속성명] 
+=======
+    color: lightskyblue;
+}
+/* 트위터 */
+.sns a[class^='fa-brands fa-square-tw']:hover{
+    color: lightcoral;
+}
+/* 인스타 */
+.sns a[class*=ins]:hover{
+    color: lightgreen;
+}
+
+/***************************************** 
+    속성선택자: [속성명]
+>>>>>>> e4638dfeb3f8ec3fea67c53bfa590d691003179c
     - 속성명의 특정값을 비교하는 3가지 방법
     1. [속성명=값] -> 정확히 일치하는 값
     2. [속성명*=값] -> 값내용중 있기만하면 찾음
@@ -329,9 +737,63 @@ margin-right: 20px;
     4. [속성명$=값] -> 값내용이 끝나는 문자열 찾음
 
     - 별은 하늘에 있고 모두가 볼 수 있다 *= 모든일치내용
+<<<<<<< HEAD
     - 시작할때는 웃으면서 시작
     - 끝날때는 돈받고 끝나라! $= 끝나는내용
 
     - 사용하는 문자열에 문제가 없다면 따옴표를 쓰지 않아도 된다!
     (띄어쓰기, 특수문자 등 있다면 따옴표사용)
 ************************************************/
+=======
+    - 시작할때는 웃으면서 시작 ^= 시작하는내용
+    - 끝날때는 돈받고 끝나라!  $= 끝나는내용
+
+    - 사용하는 문자열에 문제가 없다면
+    따옴표를 쓰지 않아도 된다!
+    (띄어쓰기, 특수문자 등 있다면 따옴표사용)
+
+
+*****************************************/
+
+
+
+/* 구글맵 지도박스 */
+.gmap{
+    position: fixed;
+    top: -50%;
+    /* 처음에 top값으로 윗쪽에 숨김! */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* 정중앙이동 */
+
+    width: 600px;
+    height: 450px;
+    background-color: #fff;
+    border: 20px solid hotpink;
+    border-radius: 10px;
+
+    z-index: 999;
+    /* 트랜지션: 속시이지 */
+    transition: top .8s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+/* 구글맵에 클래스"on"적용시 등장하기 */
+.gmap.on{
+    top: 50%;
+}
+/* 닫기버튼 */
+.cbtn{
+    position: absolute;
+    top: 0;
+    right: 10px;
+    font-size: 40px;
+    font-weight: bold;
+    color: #000;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+/* 기본 포커스 아웃라인 제거 */
+.cbtn:focus{
+    outline: none;
+}
+>>>>>>> e4638dfeb3f8ec3fea67c53bfa590d691003179c
