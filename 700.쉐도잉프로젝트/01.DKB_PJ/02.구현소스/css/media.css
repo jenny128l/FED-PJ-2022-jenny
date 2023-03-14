@@ -2,11 +2,14 @@
 
 /* 도깨비PJ 공통 미디어쿼리 - media.css */
 
+<<<<<<< HEAD
+=======
 /* 공통 외부 css 함치기 */
 @import url(reset.css);
 @import url(common.css);
 @import url(main.css);
 
+>>>>>>> e4638dfeb3f8ec3fea67c53bfa590d691003179c
 /* 1200px 사이즈 이하 미디어쿼리 시작 */
 @media screen and (max-width: 1200px) {
     /* 하단 - 브랜드바로가기 */
@@ -32,7 +35,11 @@
         */
     }
     /* 메인속박스 */
+<<<<<<< HEAD
+    .cont{
+=======
     .cont {
+>>>>>>> e4638dfeb3f8ec3fea67c53bfa590d691003179c
         /* 가로크기에 대한 비율을 만들어준다! */
         min-height: 100vw;
     }
@@ -67,12 +74,27 @@
 /* 780px 사이즈 이하 미디어쿼리 시작 */
 @media screen and (max-width: 780px) {
     /* 가로스크롤 없애기 */
+<<<<<<< HEAD
+    html,body{
+=======
     html,
     body {
+>>>>>>> e4638dfeb3f8ec3fea67c53bfa590d691003179c
         width: 100vw;
         overflow-x: hidden;
     }
     /* 디스플레이 없애기 */
+<<<<<<< HEAD
+    .tmenu, .gnb{
+        display: none;
+    }
+    /* 햄버거 버튼 보이기 */
+    .ham{
+        display: block;
+    }
+    /* 상단영역 */
+    .top{
+=======
     .tmenu,
     .smbx,
     .gnb > ul > li > a::after,
@@ -170,6 +192,7 @@
 
     /* 상단영역 */
     .top {
+>>>>>>> e4638dfeb3f8ec3fea67c53bfa590d691003179c
         position: relative;
         /* 부모자격 - 햄버거 버튼(.ham)
         -> 가로스크롤문제를 발생하므로
@@ -177,36 +200,64 @@
         height: 80px;
     }
     /* 캐릭터박스 한줄에 하나 */
+<<<<<<< HEAD
+    .cat{
+        width: 99%;
+    }
+    /* 캐릭터 설명박스 */
+    .cd{
+=======
     .cat {
         width: 99%;
     }
     /* 캐릭터 설명박스 */
     .cd {
+>>>>>>> e4638dfeb3f8ec3fea67c53bfa590d691003179c
         /* 자리차지 포지션으로 전환! */
         position: static;
     }
     /* 설명박스 제목 */
+<<<<<<< HEAD
+    .cd h3{
+        font-size: 4.5vw;
+    }
+    /* 설명박스 문단 */
+    .cd p{
+=======
     .cd h3 {
         font-size: 4.5vw;
     }
     /* 설명박스 문단 */
     .cd p {
+>>>>>>> e4638dfeb3f8ec3fea67c53bfa590d691003179c
         font-size: 4vw;
         padding: 3vw;
     }
     /* 문단 첫글자 */
+<<<<<<< HEAD
+    .cd p:first-child::first-letter{
+=======
     .cd p:first-child::first-letter {
+>>>>>>> e4638dfeb3f8ec3fea67c53bfa590d691003179c
         font-size: 8vw;
     }
 
     /* 하단영역 */
     /* 브랜드 바로가기 */
+<<<<<<< HEAD
+    .brand{
+=======
     .brand {
+>>>>>>> e4638dfeb3f8ec3fea67c53bfa590d691003179c
         bottom: 10px;
         top: auto;
     }
     /* 하단링크 일부 숨기기(li:1~3) */
+<<<<<<< HEAD
+    .blink li:nth-child(-n+3){
+=======
     .blink li:nth-child(-n + 3) {
+>>>>>>> e4638dfeb3f8ec3fea67c53bfa590d691003179c
         display: none;
     }
 }

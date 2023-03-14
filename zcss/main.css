@@ -2,7 +2,11 @@
 /* 아카이브 CSS - main.css */
 
 /* 웹폰트CDN */
+<<<<<<< HEAD
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Single+Day&family=Sunflower:wght@500&display=swap');
+=======
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Single+Day&family=Sunflower:wght@500&display=swap");
+>>>>>>> e4638dfeb3f8ec3fea67c53bfa590d691003179c
 
 /* 
 font-family: 'Bebas Neue', cursive;
@@ -11,12 +15,28 @@ font-family: 'Sunflower', sans-serif;
 
  */
 
+<<<<<<< HEAD
+html{
+=======
 html {
+>>>>>>> e4638dfeb3f8ec3fea67c53bfa590d691003179c
     scroll-behavior: smooth;
     /* #아이디명 스크롤 이동시 부드럽게 애니메이션 이동함! */
     font-size: 10px;
     /* rem계산시 쉽도록 10px */
 }
+<<<<<<< HEAD
+body{
+    overflow: hidden;
+    font-family: 
+    'Bebas Neue',
+    'Single Day';
+
+}
+
+/* 상단영역 */
+#top{
+=======
 body {
     overflow: hidden;
     font-family: "Bebas Neue", "Single Day";
@@ -24,6 +44,7 @@ body {
 
 /* 상단영역 */
 #top {
+>>>>>>> e4638dfeb3f8ec3fea67c53bfa590d691003179c
     position: fixed;
     width: 100%;
     /* 판타롱스타킹 이므로 100%로 가로폭 확장! */
@@ -35,14 +56,36 @@ body {
 }
 
 /* ul 초기화 (3無) */
+<<<<<<< HEAD
+ul,ol{
+=======
 ul,
 ol {
+>>>>>>> e4638dfeb3f8ec3fea67c53bfa590d691003179c
     margin: 0;
     padding: 0;
     list-style: none;
 }
 
 /* 전체 타이틀 */
+<<<<<<< HEAD
+.tit{
+    font-size: 5rem;
+    font-family: 'Sunflower';
+    color: lightseagreen;
+}
+
+/************** GNB메뉴 **************/
+/* GNB박스 width 크기를 주고 마영오! */
+.gnb{
+    width: 600px;
+    margin: 0 auto;
+    white-space: nowrap;
+    font-family: 'Sunflower';
+}
+/* li 옆으로 흐르게 float */
+.gnb li{
+=======
 .tit {
     font-size: 5rem;
     font-family: "Sunflower";
@@ -64,18 +107,28 @@ ol {
 }
 /* li 옆으로 흐르게 float */
 .gnb li {
+>>>>>>> e4638dfeb3f8ec3fea67c53bfa590d691003179c
     float: left;
     text-align: center;
     width: 150px;
 }
 /* ul박스 가상요소로 clear처리 */
+<<<<<<< HEAD
+.gnb ul::after{
+    content: '';
+=======
 .gnb ul::after {
     content: "";
+>>>>>>> e4638dfeb3f8ec3fea67c53bfa590d691003179c
     display: block;
     clear: both;
 }
 /* GNB a요소 */
+<<<<<<< HEAD
+.gnb a{
+=======
 .gnb a {
+>>>>>>> e4638dfeb3f8ec3fea67c53bfa590d691003179c
     /* 글자색,밑줄없앰 */
     color: lime;
     text-decoration: none;
@@ -83,7 +136,16 @@ ol {
     font-size: 30px;
     /* 그림자로 글자 테두리주기
     블러없는 그림자 4개사용 */
+<<<<<<< HEAD
+    text-shadow: 
+        1px 0 #000,
+        -1px 0 #000,
+        0 1px #000,
+        0 -1px #000;
+
+=======
     text-shadow: 1px 0 #000, -1px 0 #000, 0 1px #000, 0 -1px #000;
+>>>>>>> e4638dfeb3f8ec3fea67c53bfa590d691003179c
 }
 
 html,
@@ -114,6 +176,21 @@ body가 기준이 된다!  */
     background-size: cover;
 }
 /* 두번째 페이지박스 */
+<<<<<<< HEAD
+#pg2{
+    background-image: url(../imgs/001.jpg);
+}
+/* 세번째 페이지박스 */
+#pg3{
+    background-image: url(../imgs/002.jpg);
+}
+/* 네번째 페이지박스 */
+#pg4{
+    background-image: url(../imgs/005.jpg);
+}
+
+
+=======
 #pg2 {
     background-image: url(../imgs/001.jpg);
 }
@@ -126,6 +203,7 @@ body가 기준이 된다!  */
     background-image: url(../imgs/005.jpg);
 }
 
+>>>>>>> e4638dfeb3f8ec3fea67c53bfa590d691003179c
 /* 페이지별 컨텐츠 박스 */
 .pwrap {
     position: relative;
@@ -148,13 +226,21 @@ body가 기준이 된다!  */
 }
 
 /* .pwrap 하위 .part박스 */
+<<<<<<< HEAD
+.part{
+=======
 .part {
+>>>>>>> e4638dfeb3f8ec3fea67c53bfa590d691003179c
     flex: 1;
     /* 1:1 비율로 등분할! */
     padding: 50px;
 }
 /* 서브타이틀 */
+<<<<<<< HEAD
+.part h2{
+=======
 .part h2 {
+>>>>>>> e4638dfeb3f8ec3fea67c53bfa590d691003179c
     background-color: rgba(0, 0, 0, 0.444);
     padding: 20px;
     border-radius: 20px;
@@ -163,6 +249,20 @@ body가 기준이 된다!  */
     text-align: center;
     text-shadow: 2px 2px 2px #000;
 }
+<<<<<<< HEAD
+/* .part a요소 */
+.part a{
+    color: #222;
+    text-decoration: none;
+    font-size: 3.5rem;
+    line-height: 1.7;
+}
+
+/* pg1 - 공통프로젝트 아이콘 */
+#pg1 .part a::before{
+    content: '🎭';
+    margin-right: 10px;
+=======
 .part h2 span {
     display: inline-block;
 }
@@ -247,6 +347,7 @@ body가 기준이 된다!  */
 }
 .part li{
     padding: 5px 0;
+>>>>>>> e4638dfeb3f8ec3fea67c53bfa590d691003179c
 }
 
 /* h1요소 */

@@ -7,9 +7,16 @@
 
 
 /* 공사중 표시 */
+<<<<<<< HEAD
+ /* body * {
+    outline: 1px dashed ghostwhite;
+ }  */
+ 
+=======
 /* body * {
     outline: 1px dashed ghostwhite;
 } */
+>>>>>>> e4638dfeb3f8ec3fea67c53bfa590d691003179c
 
 /* 전체배경색 */
 body{
@@ -65,7 +72,11 @@ body{
     position: relative;
     /* 부모자격 : .smenu */
     padding-bottom: 5px;
+<<<<<<< HEAD
+    /* 서브메뉴와 공간을 연결을 위해 하단패딩줌! */
+=======
     /* 서브메뉴와 공간연결을 위해 하단패딩줌! */
+>>>>>>> e4638dfeb3f8ec3fea67c53bfa590d691003179c
 }
 /* 상위li 두번째부터 */
 .gnb ul>li+li{
@@ -76,6 +87,15 @@ body{
     /* 트랜스폼 적용위해 인라인블록 */
     display: inline-block;
     font-size: 2rem;/* 20px */
+<<<<<<< HEAD
+}
+/* 오버시 변경 */
+.gnb ul>li:hover>a{
+   transform: scale(1.3);
+   color: aquamarine;
+   /* 애니메이션:이시이지반방마 */
+   animation: titAni .5s ease-in infinite alternate;
+=======
     /* 트랜지션 */
     transition: .3s;
 }
@@ -85,6 +105,7 @@ body{
     color: aquamarine;
     /* 애니메이션: 이시이지반방마 */
     animation: titAni .5s ease-in infinite alternate;
+>>>>>>> e4638dfeb3f8ec3fea67c53bfa590d691003179c
 }
 
 /* 서브메뉴 */
@@ -147,28 +168,48 @@ body{
 }
 /* 오버시 가상요소로 이모티콘 */
 .smenu a:hover::after{
+<<<<<<< HEAD
+    content: '🎬';
+=======
     content: '🎃';
+>>>>>>> e4638dfeb3f8ec3fea67c53bfa590d691003179c
     /* 오른쪽 끝으로 보내기 */
     float: right;
 }
 /* 예매 */
 .gnb ul>li:nth-child(2) 
 .smenu a:hover::after{
+<<<<<<< HEAD
+    content: '🌭';
+=======
     content: '🎪';
+>>>>>>> e4638dfeb3f8ec3fea67c53bfa590d691003179c
 }
 /* 극장 */
 .gnb ul>li:nth-child(3) 
 .smenu a:hover::after{
     content: '👓';
 }
+<<<<<<< HEAD
+/* 이벤트&컬쳐 */
+.gnb ul>li:nth-child(4) 
+.smenu a:hover::after{
+    content: '🥕';
+=======
 /* 이벤트&컬처 */
 .gnb ul>li:nth-child(4) 
 .smenu a:hover::after{
     content: '😻';
+>>>>>>> e4638dfeb3f8ec3fea67c53bfa590d691003179c
 }
 
 /* 서브메뉴 li보더 상단 구분선 클래스 */
 .bdt{
+<<<<<<< HEAD
+    border-top:1px solid #ccc;
+}
+
+=======
     border-top: 1px solid #ccc;
 }
 
@@ -407,25 +448,37 @@ body{
 }
 
 
+>>>>>>> e4638dfeb3f8ec3fea67c53bfa590d691003179c
 
 /**************** 2.메인영역 ****************/
 /* 속박스 */
 .cont{
     position: relative;
     /* 부모자격 - .screen */
+<<<<<<< HEAD
+    height: 788px;
+=======
     /* 비율설정 */
     aspect-ratio: 1200/788;
     /* height: 788px; */
+>>>>>>> e4638dfeb3f8ec3fea67c53bfa590d691003179c
     /* 극장배경 넣기 */
     background: url(../images/bg.jpg) no-repeat center top/100%;
 }
 /* 2-1.스크린 */
 .screen{
     position: absolute;
+<<<<<<< HEAD
+    top: 136px;
+    left: 256px;
+    width: 702px;
+    height: 398px;
+=======
     top: 17.2%;
     left: 21.3%;
     width: 58.6%;
     height: 50.6%;
+>>>>>>> e4638dfeb3f8ec3fea67c53bfa590d691003179c
     background-color: #000;
 }
 /* 유튜브 아이프레임 */
@@ -439,6 +492,16 @@ body{
 /* 2-2.예고편 선택메뉴 */
 .mlist{
     position: absolute;  
+<<<<<<< HEAD
+    bottom: 61px;
+    left: 50%;
+    width: 702px;
+    transform: translateX(-49%);
+
+    /* 앱솔루트 부모자격이 있는 요소의
+    overflow가 적용됨! */
+    overflow: hidden;
+=======
     bottom: 5.4%;
     left: 50%;
     width: 60%;
@@ -447,6 +510,7 @@ body{
     /* 앱솔루트 부모자격이 있는 요소의
     overflow가 적용됨! -> li각각에 처리함 */
     /* overflow: hidden; */
+>>>>>>> e4638dfeb3f8ec3fea67c53bfa590d691003179c
 
 }
 /* 선택메뉴 ul */
@@ -455,6 +519,18 @@ body{
     display: flex;
     /* 진행방향정렬 : 양쪽끝 맞춘후 사이간격일정 */
     justify-content: space-between;
+<<<<<<< HEAD
+    
+}
+/* 선택메뉴 상위li */
+.mlist ul>li{
+    overflow: hidden;
+}
+/* 포스터 이미지 */
+.mlist img{
+    width: 99px;
+    height: 140px;
+=======
     /* 원근3D적용 -> 보이는 화면 높이값의 50% */
     perspective: 50vh;
     
@@ -494,6 +570,7 @@ body{
 .mlist img{
     width: 100%;
     /* height: 140px; */
+>>>>>>> e4638dfeb3f8ec3fea67c53bfa590d691003179c
 }
 
 /* 영화정보박스 */
@@ -508,15 +585,24 @@ body{
     /* 앱솔루트 포지션 */
     position: absolute;
     top: 100%;
+<<<<<<< HEAD
+    width: 99px;
+    height: 140px;
+=======
     width: 100%;
     height: 100%;
     /* 부모는? 싸고있는 li */
+>>>>>>> e4638dfeb3f8ec3fea67c53bfa590d691003179c
     text-align: center;
     background-color: rgba(0, 0, 0, 0.7);
 
     /* 글자셋팅 */
     font-family: 'Cute Font', cursive;
+<<<<<<< HEAD
+    font-size: 14px;
+=======
     font-size: min(14px,1.1vw);
+>>>>>>> e4638dfeb3f8ec3fea67c53bfa590d691003179c
     line-height: 2;
 
     /* 트랜지션: 속시이지 */
@@ -528,6 +614,11 @@ body{
     top: 0;
 }
 
+<<<<<<< HEAD
+
+/**************** 3.하단영역 ****************/
+.info{
+=======
 /* 영화정보박스 제목만 변경 */
 .movtxt li:first-child {
     font-size: min(17px,1.2vw);
@@ -539,21 +630,40 @@ body{
 /**************** 3.하단영역 ****************/
 .info{
     /* 플렉스박스 */
+>>>>>>> e4638dfeb3f8ec3fea67c53bfa590d691003179c
     display: flex;
     /* 수직방향정렬 : ai */
     align-items: center;
     height: 100px;
 }
+<<<<<<< HEAD
+/* 3-1.로고 */
+.logo{
+margin-right: 20px;
+=======
 
 /* 3-1.로고 */
 .logo{
     margin-right: 20px;
+>>>>>>> e4638dfeb3f8ec3fea67c53bfa590d691003179c
 }
 /* 3-2.회사정보 */
 .corp address{
     font-family: 'Cute Font', cursive;
     color: #fff;
     font-style: normal;
+<<<<<<< HEAD
+    line-height: 2rem;
+    font-size: 18px;
+}
+/* 3-3.SNS */
+.sns{
+    /* 오른쪽  끝위치 */
+    margin-left: auto;
+}
+.sns ol{
+/* 플랙스박스 */
+=======
     font-size: 1.8rem;
     line-height: 2rem;
 }
@@ -564,6 +674,7 @@ body{
 }
 .sns ol{
     /* 플렉스박스 */
+>>>>>>> e4638dfeb3f8ec3fea67c53bfa590d691003179c
     display: flex;
 }
 .sns li{
@@ -583,11 +694,28 @@ body{
     font-size: 34px;
     text-align: center;
 }
+<<<<<<< HEAD
+=======
 
+>>>>>>> e4638dfeb3f8ec3fea67c53bfa590d691003179c
 /* sns 오버시 글자색 */
 
 /* 페북 */
 .sns a[class$=book]:hover{
+<<<<<<< HEAD
+    color:lightskyblue;
+}
+/* 트위터 */
+.sns a[class^='fa-brands fa-square-tw']:hover{
+    color:lightcoral
+}
+/* 인스타 */
+.sns a[class*=ins]:hover{
+    color:lightgreen
+}
+/************************************************ 
+    속성선택자: [속성명] 
+=======
     color: lightskyblue;
 }
 /* 트위터 */
@@ -601,6 +729,7 @@ body{
 
 /***************************************** 
     속성선택자: [속성명]
+>>>>>>> e4638dfeb3f8ec3fea67c53bfa590d691003179c
     - 속성명의 특정값을 비교하는 3가지 방법
     1. [속성명=값] -> 정확히 일치하는 값
     2. [속성명*=값] -> 값내용중 있기만하면 찾음
@@ -608,6 +737,14 @@ body{
     4. [속성명$=값] -> 값내용이 끝나는 문자열 찾음
 
     - 별은 하늘에 있고 모두가 볼 수 있다 *= 모든일치내용
+<<<<<<< HEAD
+    - 시작할때는 웃으면서 시작
+    - 끝날때는 돈받고 끝나라! $= 끝나는내용
+
+    - 사용하는 문자열에 문제가 없다면 따옴표를 쓰지 않아도 된다!
+    (띄어쓰기, 특수문자 등 있다면 따옴표사용)
+************************************************/
+=======
     - 시작할때는 웃으면서 시작 ^= 시작하는내용
     - 끝날때는 돈받고 끝나라!  $= 끝나는내용
 
@@ -659,3 +796,4 @@ body{
 .cbtn:focus{
     outline: none;
 }
+>>>>>>> e4638dfeb3f8ec3fea67c53bfa590d691003179c
