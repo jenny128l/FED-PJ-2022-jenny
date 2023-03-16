@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>레이아웃 미디어쿼리3 - 비율유지 aspect-ratio</title>
+        <title>레이아웃 미디어쿼리3 - 비율유지 aspect-ratio사용</title>
         <style>
             html,
             body {
@@ -13,9 +13,9 @@
 
             /* 공통class */
             .ibx {
-                /* 플랙스 박스 */
+                /* 플렉스박스 */
                 display: flex;
-                /* 플랙스 랩핑 */
+                /* 플렉스 랩핑 */
                 flex-wrap: wrap;
 
                 /* 속박스 */
@@ -25,12 +25,12 @@
                 outline: 1px dashed red;
             }
 
-            .ibx::after {
-                /* float해제 */
-                content: '';
-                display: block;
-                clear: both;
-            }
+            /* float해제 */
+            /* .ibx::after {
+            content: '';
+            display: block;
+            clear: both;
+        } */
 
             .pbx {
                 /* 파티션박스 */
@@ -40,25 +40,22 @@
 
             /* 영역별 비율설정하기 */
             /* 상단영역 - 3.8 : 1 */
-            .top{
+            .top {
                 aspect-ratio: 3.8;
-
             }
-            /* 메인영역 - 5 : 1*/
-            .cont{
+            /* 메인영역 - 5 : 1 */
+            .cont {
                 aspect-ratio: 5;
-
             }
-            /*  하단영역 - 2.4 : 1*/
-            .info{
+            /* 하단영역 - 2.4 : 1 */
+            .info {
                 aspect-ratio: 2.4;
-                
             }
 
             /* 개별 디자인 */
 
             /* 1. 상단영역 */
-            .top>.pbx {
+            .top > .pbx {
                 width: 33.33%;
                 /* 3등분 */
                 /* height: 120px; */
@@ -77,7 +74,7 @@
             }
 
             /* 2. 중앙영역 */
-            .cont>.pbx {
+            .cont > .pbx {
                 width: 25%;
                 /* 4등분 */
                 /* height: 300px; */
@@ -100,7 +97,7 @@
             }
 
             /* 3. 하단영역 */
-            .info>.pbx {
+            .info > .pbx {
                 width: 50%;
                 /* 2등분 */
                 /* height: 200px; */
@@ -117,74 +114,74 @@
             /* 크기별 미디어쿼리 */
 
             /************** 1024px 이하 **************/
-            @media screen and (max-width:1024px) {
-                /* 1. 상단영역 */
-                .top{
+            @media screen and (max-width: 1024px) {
+                /* 1.상단영역 */
+                .top {
                     aspect-ratio: 1.2;
                 }
-                .top>.pbx{
-                    width:50%;
+                .top > .pbx {
+                    width: 50%;
                     /* height: 180px; */
                 }
                 /* 마지막 박스변경 */
-                .top>.top3{
+                .top > .top3 {
                     width: 100%;
                     /* height: 300px; */
                 }
 
-                /* 2. 메인영역 */
-                .cont{
+                /* 2.메인영역 */
+                .cont {
                     aspect-ratio: 0.9;
                 }
-                .cont>.pbx {
-                width: 33.333%;
-            }
-                .cont>.cont4 {
-                width: 100%;
-                /* height: 600px; */
-            }
+                .cont > .pbx {
+                    width: 33.333%;
+                }
+                .cont > .cont4 {
+                    width: 100%;
+                    /* height: 600px; */
+                }
 
-            /* 3. 하단영역 */
-            .info{
+                /* 3.하단영역 */
+                .info {
                     aspect-ratio: 1.6;
                 }
-            /* .info>.pbx {
-                height: 400px;
-            } */
-
+                /* .info > .pbx {
+                    height: 400px;
+                } */
             }
             /* 1024px 이하 */
 
             /*************** 800px 이하 ***************/
-            @media screen and (max-width:800px) {
-                 /* 2. 메인영역 */
-                .cont>.pbx {
-                width: 50%;
-                /* height: 300px; */
+            @media screen and (max-width: 800px) {
+                /* 2.메인영역 */
+                .cont > .pbx {
+                    width: 50%;
+                    /* height: 300px; */
+                }
             }
             /* 800px 이하 */
 
-            }
             /**************** 500px 이하 ****************/
-            @media screen and (max-width:500px) {
+            @media screen and (max-width: 500px) {
                 /* 영역별 비율조정 
                 - 가로 1 : 세로는 파티션개수만큼 */
                 .top{
-                    aspect-ratio: 1/3;
+                    aspect-ratio: 1 / 3;
                 }
                 .cont{
-                    aspect-ratio: 1/4;
+                    aspect-ratio: 1 / 4;
                 }
                 .info{
-                    aspect-ratio: 1/2;
+                    aspect-ratio: 1 / 2;
                 }
-                 /* 파티션박스 전체적용 */
-                 /* 더 작은 사이즈가 없이 최종적용이므로!important를 사용하여 강제적용한다! */
+                /* 파티션박스 전체적용 */
+                /* 더 작은 사이즈가 없이 최종적용이므로
+                !important를 사용하여 강제적용한다! */
                 .pbx {
-                width: 100% !important;
-                /* height: 400px !important; */
+                    width: 100% !important;
+                    /* height: 400px !important; */
+                }
             }
-             }
             /* 500px 이하 */
         </style>
     </head>

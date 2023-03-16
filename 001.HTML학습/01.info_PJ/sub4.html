@@ -149,12 +149,14 @@
                 unordered list 
                 (참고: 블릿옵션
                 https://www.w3schools.com/tags/tryit.asp?filename=tryhtml_ul_type_css)
+
                 [ 순서있는 리스트 : ol ]
                 ordered list
                 (참고: 순서표시옵션
                 https://www.w3schools.com/tags/tryit.asp?filename=tryhtml_ol_type_all_css)
                 - start 속성 : 시작번호
                 - reverse 속성 : 일련번호를 거꾸로 진행
+
                 [ul/ol 공통사항]
                 - 하위필수요소: li (개별리스트)
                 - 주의: 하위에 li이외의 블록요소나 그 어떤요소도
@@ -186,6 +188,7 @@
                
                 dl > dt + dd
                 ___________________
+
                 dl : 용어리스트
                 (defines the description list)
                 dt : 용어정의
@@ -196,6 +199,7 @@
                 주의 - dl은 반드시 자식요소로 dt와 dd를
                 한번이상 사용해야한다!
                 또주의 - dt와 dd는 형제다! dt>dd 아니다!!!
+
              -->
              <!-- 분야별 뉴스 : dl -->
              <article class="secnews">
@@ -208,7 +212,8 @@
                     </dd>
                     <dd>
                         <a href="https://n.news.naver.com/mnews/article/056/0011395743?sid=101" target="_blank">	
-                        ‘5%룰’ 위반 시 과징금 한도 10배 상향…사모CB 발행 공시 강화</a>
+                            	
+‘5%룰’ 위반 시 과징금 한도 10배 상향…사모CB 발행 공시 강화</a>
                     </dd>
 
                     <dt>사회</dt>
@@ -236,12 +241,12 @@
 
             <!-- 
                 [ 테이블 요소 : table ]
-                table tbody > tr > td
+                table > tbody > tr > td
 
                 -> tbody는 안써도 브라우저가 그려준다!
                 -> 직계자식으로 선택할 경우
-                table > tr로 선택하면 적용되지 않는 이유가 바로 이것이다!!(주의!)
-
+                table > tr 로 선택하면 적용되지 않는
+                이유가 바로 이것이다!!!(주의!)
                 ___________________
 
                 table : 테이블 박스 부모요소
@@ -254,7 +259,7 @@
                 <h3>사진뉴스</h3>
                 <table>
                 <!-- <table border="1"> -->
-                    <!-- border 속성은 테스트용임 -->
+                    <!-- border속성은 테스트용임 -->
                     <tr>
                         <td>1</td>
                         <td>
@@ -323,23 +328,29 @@
             1. 두꺼운글자
             <b> - 단순히 글자두꺼움(Bold text) 
             <strong> - 중요함의 의미(Important text)
+
             2. 이탤릭글자
             <i> - 단순히 이탤릭체(Italic text)
             <em> - 강조의 의미(Emphasized text)
+
             3. 색상표시
             <mark> - 표시글자(Marked text)
+
             4. 작은글자
             <small> - 좀더작은글자(Smaller text)
                 -> h5 요소의 글자와 같은 크기임
                 -> 상속된 글자 크기에 대한 상대적인
                 크기이므로 브라우저에서 소수점으로 표시
                 될 수 있다!
+
             5. 삭제된 글자표시
             <del> - 중간지움표시글자(Deleted text)
                 -> text-decoration: line-through
+
             6. 삽입된 글자표시
             <ins> - 밑줄표시로 삽입글자(Inserted text)
                 -> text-decoration: underline
+
             7. 첨자표시
             1) 아랫첨자 <sub> 
                 - 약간아랫쪽 작은글자(Subscript text)
@@ -347,6 +358,10 @@
             2) 윗첨자 <sup> 
                 - 약간윗쪽 작은글자(Superscript text)
                 - 주석표시숫자(숫자와 설명을 연결함)
+
+
+
+
             [ 2. 인용관련요소 ]
             1. 블록인용요소
             <blockquote>	 
@@ -355,15 +370,19 @@
                 - cite 속성 : 출처표시
                 (필수속성은 아니면 url주소가 들어가기 때문에 링크로
                 오해될 수 있으나 아님! 단순 출처정보)
+
             2. 인라인인용요소
             <q> 
                 - 작은 인용구(쌍따옴표가 자동생성) 
                 - 주의: 인라인요소임(blockquote와 구분할것!)
+
             3. 줄임말 인용
             <abbr>	
                 - 줄임말의 원래 뜻을 표시하는 요소
                 - 필수속성 ->> title 속성으로 툴팁을 띄운다(원래뜻)
+
             (참고: title속성은 툴팁을 띄우고자 하는 어떤 요소에도 사용할 수 있다!)
+
             4. 주소인용
             <address>
                 - 주소, 대표자, 전화번호 등 사이트 정보표시
@@ -371,6 +390,7 @@
             5. 작품명 인용
             <cite>
                 - 인용하고 있는 작품명을 표시하기 위한 요소
+
             6. 반대방향글 인용
             <bdo>
                 - 글방향이 반대일때 사용함
@@ -378,14 +398,18 @@
                 - dir 속성 : rtl (right to left: 오른쪽에서 왼쪽으로 진행함)
                 - 아랍어,이스라엘어 등 반대방향으로
                 출력해야하는 문자를 인용할때 사용함!
+
+
             [ 시멘틱 태그란? ]
             - sementic(의미론적인, 의미있는)
             즉, 태그가 어떤 구분하는 의미가 있을 경우
             시멘틱 태그라고 부른다!
             예) strong, em, address, header, footer, nav,
             main, section, article 등 html5 에서 더욱 강조됨!
+
             - 시멘틱태그를 쓰면 검색을 더욱 정교하게 분석적으로
             수행할 수 있는 바탕이 마련된다!(검색최적화!)
+
          -->
     </body>
 </html>

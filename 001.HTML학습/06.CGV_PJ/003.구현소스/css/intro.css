@@ -57,8 +57,8 @@ html,body{
 /* 엔터박스 로고 이미지 */
 #enter img{
     /* 트랜지션: 속시이지 */
-    transition: 
-    all .3s ease-out .2s;
+    /* transition: 
+    all .3s ease-out .2s; */
 }
 /* 엔터박스 오버시 로고이미지변경 */
 #enter:hover img{

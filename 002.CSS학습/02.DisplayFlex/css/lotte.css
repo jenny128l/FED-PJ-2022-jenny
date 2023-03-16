@@ -1,15 +1,16 @@
 @charset "utf-8";
 
 /* 롯데월드 사이트 CSS - lotte.css */
+
 /* 외부파일 합치기 */
 @import url(./reset.css);
 
-/************************* 1. 상단영역 *************************/
- /* 타이틀 공통 */
- .tit {
+/************** 1.상단영역 **************/
+/* 타이틀 공통 */
+.tit {
     position: absolute;
     z-index: 1;
-    top: 100px;
+    top: 50px;
     left: 50%;
     /* 가로중앙이동:트랜스폼(트랜스레이트) */
     transform: translateX(-50%);
@@ -19,6 +20,7 @@
     /* height: 100px; */
     /* border: 5px double #fff; */
 }
+
 /* 타이틀 하위 공통 li */
 .tit > li {
     /* 박스셋팅 */
@@ -32,8 +34,9 @@
     font: bold 14px/50px Verdana;
     color: #fff;
 }
- /* 타이틀박스 7 */
- .t7 {
+
+/* 타이틀박스 7 */
+.t7 {
     width: 450px;
     /* height: 200px; */
 
@@ -63,18 +66,18 @@
     /* 윗쪽 마진으로 간격주기 */
     margin-top: 40px;
 }
-/************************* 2. 메인영역 *************************/
+/************** 2.메인영역 **************/
 /* 파티션 박스 ul */
-.cont > ul {
+.cont>ul{
     /* 플렉스박스 */
     display: flex;
     /* 높이값을 보이는 화면기준 채우기 */
     height: 100vh;
 }
 /* 파티션 박스 li */
-.cont > ul > li {
+.cont>ul>li{
     position: relative;
-    /* 부모자격 -하위 img */
+    /* 부모자격 - 하위 img */
 
     /* 플렉스 자식요소 등분할 설정 */
     flex: 1;
@@ -82,12 +85,13 @@
 
     /* 커서 손가락모양 */
     cursor: pointer;
+
     /* 트랜지션: 속시이지 */
-    transition: all 0.4s ease-out;
+    transition: all .4s ease-out;
 }
 /* 파티션 li박스 가상요소로 오버레이 효과주기 */
-.cont > ul > li::before {
-    content: "";
+.cont>ul>li::before{
+    content: '';
     display: block;
     position: absolute;
     top: 0;
@@ -99,21 +103,26 @@
     opacity: 0.5;
 
     /* 트랜지션: 속시이지 */
-    transition: all 0.4s ease-out;
+    transition: all .4s ease-out;
 }
-/* 파티션 li에 마우스 오버시  */
-/* li 넓어지기 */
-.cont > ul > li:hover {
+
+/* 파티션 li에 마우스 오버시 */
+/* li넓어지기 */
+.cont>ul>li:hover{
     flex: 1.4;
     /* 
-        flex:1 -> 등분할 설정
-        -> 여기에 다른 숫자를 쓰면 기존1로 등분할 된 것에 비교하여 2를 쓰면 2배... 이런식의 배수를 셋팅하게 됨!
+        flex: 1 -> 등분할 설정
+        -> 여기에 다른 숫자를 쓰면
+        기존 1로 등분할 된 것에 비교하여
+        2를 쓰면 2배... 이런식의
+        배수를 셋팅하게 됨!
     */
 }
 /* 가상요소 암전 밝아지기 */
-.cont > ul > li:hover::before{
+.cont>ul>li:hover::before{
     opacity: 0;
 }
+
 
 /* 각 파티션 박스에 배경 이미지 넣기 */
 .cont > ul > li:first-child {
@@ -133,25 +142,26 @@
 }
 
 /* 타이틀 + 로고 이미지 공통 셋팅 */
-.cont > ul > li > img {
+.cont>ul>li>img{
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: min(70%, 250%);
+    width: min(70%,250px);
+    /* 부모박스의 70%적용시 최대 250px한계설정 */
 }
 /* 로고만 셋팅변경 */
-.cont > ul > li > img:last-child {
+.cont>ul>li>img:last-child{
     top: 80%;
     width: auto;
 }
 
-/************************* 3. 하단영역 *************************/
+/************** 3.하단영역 **************/
 .info{
     position: absolute;
     bottom: 0;
     width: 100%;
     text-align: center;
-    padding: 5px 0;
+    padding: 7px 0;
     background-color: #da041c;
 }

@@ -10,6 +10,7 @@
     페이지 랜더링 속도에 영향을 미친다!
     따라서 import방식을 쓰면 더 적은 
     웹요청에 따라 처리 속도에 도움이 된다!    
+
     - 주의 : import는 CSS파일 상단에서 처리한다!
     */
     /* @import url(파일주소); */
@@ -301,7 +302,7 @@
 
 /* 작품명 */
 .work figcaption{
-    font-family: 'Jua',sans-serif;
+    font-family: 'Jua', sans-serif;
 }
 .work figcaption cite{
     /* 기본 이탤릭 해제 : fsn */
@@ -309,11 +310,10 @@
 }
 /* 작품이미지 */
 .work img{
-    border: 10px ridge goldenrod;
+    border: 15px ridge goldenrod;
 }
 
-
-/*파트별 a링크 요소 곧통 디자인  */
+/* 파트별 a링크 요소 공통 디자인 */
 .cont article a{
     /* 글자크기 fz */
     font-size: 17px;
@@ -326,66 +326,59 @@
 .cont article a:hover{
     /* 글자색 c */
     color: greenyellow;
-    /* 글자그림자 ts*/
+    /* 글자그림자 ts */
     text-shadow: 1px 1px 1px #000;
 }
+
 /* 공통 ul */
 .cont article ul{
     /* 리스트 타입 lst */
-    list-style-type: "😊";
+    list-style-type: "🧟‍♂️";
     /* 
-    square 사각형, disc 원형, circle 빈원
-    -> 또옴표안에 다른 문자형을 넣을 수 있음
-    ->윈도우키+점(.)->아이콘 넣기 
+        square 사각형, disc 원형, circle 빈원
+        -> 따옴표안에 다른 문자형을 넣을 수 있음
+        -> 윈도우키+점(.) -> 아이콘 넣기
     */
 }
-/* 공통 ul */
-.cont article ol{
+/* 공통 ol */
+.cont article ol {
     /* 숫자형 리스트 스타일 lit */
     list-style-type: upper-roman;
-    /*upper-roman 로마자 대문자  */
+    /* upper-roman 로마자 대문자 */
     /* 순서를 표시하는 종류는 너무 많다~! */
 }
+
 /* 주요뉴스 li별 글자색 변경하기 */
 /* 
-    [자식요소 선택 가상 클래스]
+    [ 자식요소 선택 가상클래스 : 자식요소 종류가 같아야함! ]
     요소:first-child -> 첫번째 자식요소
-    요소:first-child(n) -> n번째 자식요소
+    요소:nth-child(n) -> n번째 자식요소
     요소:last-child -> 마지막째 자식요소
 */
 /* 첫번째 li */
 .cont article ul li:first-child a{
-    color: rgb(135, 3, 243);
+    color: red;
 }
 .cont article ul li:nth-child(2) a{
-    color: rgb(0, 119, 255);
+    color: green;
 }
 .cont article ul li:last-child a{
-    color: rgb(221, 76, 235);
+    color: blue;
 }
-
-.cont article ol li:first-child a{
-    color: rgb(135, 3, 243);
-}
-.cont article ol li:nth-child(2) a{
-    color: rgb(0, 119, 255);
-}
-.cont article ol li:last-child a{
-    color: rgb(221, 76, 235);
-}
-/*
 /* 블릿과 글자사이 간격주기 */
 .cont article ul li,
-.cont article ul ol{
-    /* 패딩 left : 블릿 뒤쪽이 적용됨*/
+.cont article ol li{
+    /* 패딩 left : 블릿 뒤쪽이 적용됨 */
     padding-left: 10px;
 }
 
-/* [css 적용 우선순위] 
+/* 
+    [ CSS 적용 우선순위 ]
     type < class < id < inline < !important
-    
-    -> 더 센 선택자이여도 부모요소를 업고 있는 것이 더 쎄다!
-    예) #my < .cont .my 
+
+    -> 더 쎈 선택자이여도 부모요소를 업고 
+    있는 것이 더 쎄다!
+    예) #my < .cont .my
 */
 
 /* 분야별 뉴스 */
@@ -393,95 +386,104 @@
 .secnews dt{
     /* 글자체 : 웹폰트 */
     font-family: 'Black And White Picture', sans-serif;
-    /* 글자 크기만큼 디자인적용위해 dib  */
+    /* 글자 크기만큼 디자인적용위해 dib */
     display: inline-block;
-    /* 보더 bd */
-    border: 3px dashed darkseagreen;
+    /* 보더 db */
+    border: 4px dashed darkseagreen;
     /* 패딩 p */
     padding: 10px;
     /* 둥근모서리 : 원 50% */
     border-radius: 50%;
-    /* 글자크기 :fz */
+    /* 글자크기 : fz */
     font-size: 20px;
     /* 왼쪽마진으로 이동하기 */
     margin-left: 20px;
-    /* 박스그림자:bsh 
-    (inset)x y blur spread 색 */
-    box-shadow:0 0 5px 5px rgba(204, 45, 204, 0.614);
+    /* 박스그림자 : bsh 
+    (inset) x y blur spread 색 */
+    box-shadow: 
+    0 0 5px 5px rgba(207, 65, 207, 0.614);
 
+    
 }
-/* 앞에 dd가 있는 dt부터 마진탑 밀기 */
+/* 앞에 dd가 있는 dt만 마진탑 밀기 */
 .secnews dd+dt {
     /* 마진탑 밀기 */
     margin-top: 20px;
-    
 }
 
-/* [여러종류가 섞여 있을 경우 형제 선택하기] ]
+/* 
+    [ 여러종류가 섞여 있을 경우 형제 선택하기 ]
     요소:first-of-type -> 같은 요소 중 첫번째
     요소:nth-of-type(n) -> 같은 요소 중 n번째
-    요소:last-of-type -> 같은 요소 중 마지막번째
+    요소:last-of-type -> 같은 요소 중 마지막째
 */
 
 /* dt별 글자색 다르게 하기 */
-/* dt는 형제중 dd 가 섞여 있어서 -of-type를 사용! */
+/* dt는 형제중 dd가 섞여 있어서 -of-type을 사용! */
 .secnews dt:first-of-type{
-    color: green;
+    color: blue;
 }
 .secnews dt:nth-of-type(2){
     color: red;
 }
 .secnews dt:last-of-type{
-    color: blue;
+    color: green;
 }
+
+
 /* dd 공통 */
 .secnews dd{
     /* 왼쪽마진 ml */
     margin-left: 100px;
 }
-/* 사진 뉴스 타이틀 */
+/* 사진뉴스 타이틀 */
 .pnews h3{
     text-align: center;
 }
-/* 사진 뉴스 타이틀 가상요소 아이콘 넣기 */
+/* 사진뉴스 타이틀 가상요소 아이콘 넣기 */
 /* 맨 앞 가상요소 ::before 
-태그를 사용하지 않고 요소를 넣는 방법!*/
+태그를 사용하지 않고 요소를 넣는 방법! */
 .pnews h3::before{
     content: '📷';
 }
 /* 사진뉴스 테이블박스 */
 .pnews table{
-    /* 가로중앙이동:마영오씨! 
-    -> 블록요소 또는 table 에 적용된다!*/
+    /* 가로중앙이동 : 마영오씨!
+    -> 블록요소 또는 table 에 적용된다!  */
     margin: 0 auto;
     border: 2px solid #ccc;
+
     /* 테이블 기본 사이간격 없애기 */
     border-collapse: collapse;
     /* seperate(기본값) */
 }
 /* 테이블 a요소 */
-/* 기존 .cont article a 로 셋팅된것이 더 쎄기 때문에 여기서 윗 부모를 같은 레벨로 넣어서 선택하면 하위에 클래스가 요소(타입)보다 더 높기때문에 우선적용된다! */
+/* 기존 .cont article a 로 셋팅된것이
+더 쎄기 때문에 여기서 윗 부모를 같은
+레벨로 넣어서 선택하면 하위에 클래스가
+요소(타입)보다 더 높기때문에 우선적용된다! */
 .cont .pnews a{
     /* 글자크기 */
     font-size: 14px;
     /* 줄간격 */
     line-height: 1.5;
+
 }
 
-/* tr 이나 td에 child 선택자를 사용가능
-왜? 같은 종류의 요소만 올 수 있으므로! */
+/* 
+    tr 이나 td에 child 선택자를 사용가능
+    왜? 같은 종류의 요소만 올 수 있으므로!
+*/
 
 /* 첫번째 td - 숫자부분 */
 .pnews td:first-child{
     /* 가로크기 w */
     width: 50px;
-
     /* 세로크기 h */
-    height: 70px;
-
+    height: 84px;
+    
     /* 인라인 가로중앙 */
     text-align: center;
-
     /* 배경색 */
     background-color: #ccc;
 }
@@ -489,44 +491,51 @@
 .pnews td:nth-child(2){
     /* 배경색 */
     background-color: #e4e4e4;
-    /* 양쪽패딩:위아래 양쪽 */
-    padding:0 20px;
+    /* 양쪽패딩 : 위아래 양쪽 */
+    padding: 0 20px;
 }
-/* 세번째td */
+
+/* 세번째 td */
 .pnews td:last-child{
     background-color: #e4e4e4;
     /* 오른쪽 패딩 */
-    padding: 7px 7px;
+    padding-right: 7px;
 }
+
 /* 사진뉴스 이미지 */
 .pnews img{
     height: 70px;
-    /* 이미지는 한쪽만 크기줄때 나머지는 자동비율유지 */
+    /* 이미지는 한쪽만
+    크기줄때 나머지는 자동비율유지 */
     /* 세로정렬 */
     vertical-align: middle;
-    /* td에서만 세로정렬이 적용되고 일반적으로는 vertical-align은 인라인요소간 세로방향 정렬이다! */   
+    /* td에서만 세로정렬이 
+    적용되고 일반적으로는 
+    vertical-align은 인라인요소간
+    세로방향 정렬이다! */
 }
 
-/* 앞에 tr이 있는 tr 만 하위 td에 디자인 */
+/* 앞에 tr이 있는 tr만 하위 td에 디자인 */
 .pnews tr+tr td{
     /* 보더탑 bdt */
     border-top: 2px solid #ccc;
 }
 
-/* 말줄임 표시 셋팅하기! */
+/************************** 
+    말줄임 표시 셋팅하기! 
+**************************/
 ul a, ol a, dl a{
     /* 1.디자인 적용위해 block */
     display: block;
     /* 2.가로크기 한계주기 */
     width: 315px;
-    /* 3.줄바꿈방지(한줄짜기) */
+    /* 3.줄바꿈방지(한줄짜리) */
     white-space: nowrap;
-    /* 4.넘치는 자식 숨기기 */
+    /* 4.넘치는자식숨기기 */
     overflow: hidden;
-    /* 5.넘치는 텍스트 말줄임표 설정 */
+    /* 5.넘치는텍스트 말줄임표 설정 */
     text-overflow: ellipsis;
     /* border: 1px solid red; */
 }
-/************************************* 
-dkjsdlkjfkd
-*************************************/
+
+

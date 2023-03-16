@@ -91,8 +91,9 @@
         /* 트랜지션을 hover가 아닌 원래 요소에 주면
         양방향 모두 동시적용된다! */
         #tr1 span{
-            transition: all 2s;
-            /* 앞에 속성을 생략하거나 all 이라고 쓰면 
+            /* transition: all 2s; */
+            transition: 2s;
+            /* 앞에 속성을 생략하거나 all 이라고 쓰면
             모든 속성이 변경될때 애니메이션함! */
         }
         #tr1:hover span{
@@ -102,7 +103,6 @@
             background-color: orange;
             /* 다시 사각형으로! */
             border-radius: 0;
-
         }
 
         /* #tr2에 트랜지션 설정을 하지 않음! */
@@ -122,6 +122,7 @@
 
             /* 오버시에만 트랜지션주기 */
             transition: 3s;
+            
         }
 
         /* #tr3에 트랜지션 설정 */
@@ -138,6 +139,7 @@
             all 2s, 
             background-color 5s 2s;
             /* 전체 2초가 애니, 배경만 2초후 5초간 애니 */
+            
         }
         /* 오버시 트랜지션 별도 설정하기! */
         #tr3:hover span{
@@ -151,7 +153,8 @@
             background-color: lightgreen;
 
             /* 오버시 트랜지션 별도로 지정하기 */
-            transition: all 5s, 
+            transition: 
+            all 5s, 
             top 1s ease-out 4s;
             /* 전체는 5초간 애니, top속성만 4초후 1초간 마지막에 천천히 애니 */
         }
@@ -173,17 +176,17 @@
             /* 트랜지션 원본(양방향/돌아올때) */
             transition: 
             left 5s ease-in-out .5s,
-            /* left는 5초후 처음과 끝에 천천히 0.5초기다림 */
+            /* left는 5초간 처음과 끝에 천천히 0.5초기다림 */
             width 3s ease-out 1s,
-            /* width는 3초간 끝에 천천히 1초 기다림 */
+            /* width는 3초간 끝에 천천히 1초기다림 */
             height 1s ease-in 2s,
             /* height는 1초간 처음에 천천히 2초기다림 */
             background-color 3s linear 3s;
             /* 배경색은 3초간 등속도로 3초기다림 */
+            
         }
-        
-
-        /* 체크박스가 체크되면 그 다음 형제요소를 변경하여 클릭시 변경된것처럼 작동시킨다! */
+        /* 체크박스가 체크되면 그 다음 형제요소를 변경하여
+        클릭시 변경된것처럼 작동시킨다! */
         #chkbx:checked + span{
             /* 위치이동 */
             left: 70%;
@@ -192,10 +195,10 @@
             height: 300px;
             /* 배경색변경 */
             background-color: olivedrab;
-            /* 트랜지션 원본(양방향/돌아올때) */
             
         }
-        
+
+
         
         
     </style>
@@ -220,39 +223,42 @@
     </div>
 
     <h2>4.원본에 트랜지션을 각 속성별로 다르게 준다</h2>
-    <div id="tr4"> 
-        <label for="chkbx">체크하면 작동!</label>
-        <input type="checkbox" name="chkbx" id="chkbx">       
+    <div id="tr4">    
+        <label for="chkbx">체크하면 작동!</label> 
+        <input type="checkbox" name="chkbx" id="chkbx">   
         <span></span>
         <!-- 체크박스 다음에 변경할 요소가 와야함!
-        형제선택자로 변경을 할 수 있음! -->
+        그래야 형제선택자로 변경을 할 수 있음! -->
     </div>
 
-    <!-- 
-
-        [ 체크박스를 응용한 클릭이벤트 작동 css로 구현 ]
-        label 요소 :  input 입력요소의 네임테그이며 서로 for 속성으로 연결됨
-                        for의 값은 input 요소의 id 값이다!
+    <!--     
+        [ 체크박스를 응용한 클릭이벤트 작동 CSS로 구현 ]
+        label 요소 : input 입력요소의 네임태그이며 
+                    서로 for 속성으로 연결됨
+                    for의 값은 input 요소의 id값이다!
         input 요소 : 여러종류의 입력양식이 있음
                     checkbox -> 체크박스형식
-                    text -> 갈자입력형식
+                    text -> 글자입력형식
                     password -> 비번입력형식
-                    radio -> 라디오버튼형식
-            -> name 속성은 무엇? 백엔드에서 값을 읽어갈때 기본적으로 name 속성의  값으로 읽어간다! 필수셋팅!
-            -> id 속성은 label의 for와 견결하으로 필수셋팅! 
-            
-            [ 클릭 이벤트처럼 효과내기 ]
+                    radio -> 라디오버튼형식 
+            -> name 속성은 무엇? 백엔드에서 값을 읽어갈때
+                기본적으로 name속성의 값으로 읽어간다! 필수셋팅!
+            -> id 속성은 label의 for와 연결하므로 필수셋팅!
+
+            [클릭 이벤트처럼 효과내기]
             :checked 라는 가상클래스를 사용!
-             + 형제요소 선택자를 사용!
+            + 형제요소 선택자를 사용!
 
-             ->> 체크박스: checked + 변경할요소 { 변경내용 }
+            ->> 체크박스:checked + 변경할요소 { 변경내용 }
 
-             -> 라벨은 서로 붙여서 코딩하지 않아도 되므로 다른곳에 원하는 디자인요소를 구현후 이것을 클릭하면 체크박스가 체크되므로 기능이 작동함!
+            -> 라벨은 서로 붙여서 코딩하지 않아도 되므로
+            다른곳에 원하는 디자인요소를 구현후 이것을 클릭하면
+            체크박스가 체크되므로 기능이 작동함!
 
-             -> 체크박스는 display:none으로 처리하여 숨겨놓아도 동일안 작동을 할 수 있음! #chkbx{display: none;}
+            -> 체크박스는 display:none으로 처리하여 숨겨놓아도
+            동일한 작동을 할 수 있음!
 
      -->
-
 </body>
 
 </html>
