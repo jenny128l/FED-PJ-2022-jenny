@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JS5-4.생성자함수</title>
+    <title>JS5-5.생성자함수</title>
     <script>
         /* 
             [ 생성자 함수란? ]
@@ -101,29 +101,23 @@
        let hcode = "";
 
        for(let x of mi){
-        // console.log(x);
-        // 객체는 for in문
-        hcode += "<ul>";
-        for(let y in x){ // y는 속성명, x는 객체
-            // console.log(y);
-            if(y==="제목")
-            hcode += `
-            <li><h2>제목: ${x[y]}</h2></li>`;
-
-            else if(y==="포스터")
-            hcode += `
-            <li><img src="${x[y]}" 
-                alt="포스터"></li>
-            `;
-        } /////// for in문 ////////////////
-        
-        hcode += "</ul>";
+        console.log(x);
+        // 이미 객체를 가져왔으므로 
+        // 바로 속성으로 값을 셋팅함!
+        hcode += `
+            <ul>
+                <li><h2>제목: ${x.제목}</h2></li>
+                <li><img src="${x.포스터}" 
+                    alt="${x.제목}의 포스터"></li>
+            </ul>`;
 
        } //////////// for of문 /////////////
        
         console.log(hcode);
 
        document.write(hcode);
+
+       
 </script>
 </head>
 <body>
