@@ -31,3 +31,7 @@ $(".myipt").click(function(){
     $(this).next().find(".calender").show();
 
 }); ///// click //////////
+
+$(".calender").click(function(){
+    $(this).hide();
+});
