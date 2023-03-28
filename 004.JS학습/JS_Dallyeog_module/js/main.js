@@ -2,7 +2,7 @@
 
 // 모듈 불러오기 : import
 import MakeDallyeok from "./calendar.js";
-// 현제 같은 위치일지라도 ./를 반드시 써야 불러옴!
+// 현재같은 위치일지라도 ./ 를 반드시 써야 불러옴!
 
 // 생성자함수를 인스턴스로 호출하기
 // 인스턴스 생성이란 특정메모리 구역에
@@ -20,18 +20,21 @@ let calbx2 = new MakeDallyeok(".calbx2");
 // 초기화함수 호출
 calbx2.initDallyeok();
 // 다음달 달력호출하기
-// calbx.nextCal();
+// calbx2.nextCal();
 
 
 
-// 제이쿼리 라이브러리를 html페이지 상단에 호출후 사용!
+/// 제이쿼리 라이브러리를 html페이지 상단에 호출후 사용!
 $(".myipt").click(function(){
     console.log(this);
     // 해당박스 달력보이기
     $(this).next().find(".calender").show();
-
-}); ///// click //////////
+}); /////// click /////////////
 
 $(".calender").click(function(){
-    $(this).hide();
+    let val = $(this).find(".dinfo").val();
+    // val() 메서드 - input의 value값을 읽어옴
+    $(this).parent().prev().val(val);
+    // val(값) -> input에 내용넣기
+    // $(this).hide();
 });
